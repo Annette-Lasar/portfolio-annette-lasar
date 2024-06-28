@@ -1,0 +1,67 @@
+{
+  "menu": {
+    "about": "About me",
+    "skills": "My skills",
+    "portfolio": "Portfolio"
+  },
+  "hero": {
+    "profession": "Frontend Developer",
+    "button": "Send a message"
+  },
+  "about": {
+    "about": "About me",
+    "description": "I'm a Front-end developer based near Heilbronn, Germany. I enjoy helping designers and companies bring their ideas into real life. I'm looking forward to continuing my developer career with a job in a junior web developer position.",
+    "request_to_contact": "If you think I'd be a good match for your projects, contact me!",
+    "button": "Let's talk"
+  },
+  "skills": {
+    "skills": "My skills"
+  },
+  "portfolio": {
+    "introduction": "Explore a selection of my work here. - Interact with projects to see my skills in action. While coding, I always follow the 'Small Screen First' principle.",
+    "projects": [
+      {
+        "join": {
+          "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+          "test_button": "Try it out"
+        }
+      },
+      {
+        "mermaid": {
+          "description": "A swim-and-shoot game based on an object-oriented approach. Help the mermaid to find pearls and stars to fight against a variety of fish and collect the golden key to open the treasure chest in the end.",
+          "test_button": "Try it out"
+        }
+      },
+      {
+        "pokedex": {
+          "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
+          "test_button": "Try it out"
+        }
+      },
+      {
+        "da_bubble": {
+          "description": "A messaging app that enables users to create channels and to communicate in real time.",
+          "test_button": "Try it out"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "greeting": "Say Hi!",
+    "question": "Want to discuss a new project?",
+    "request_to_contact": "Say hello! Let's discuss your ideas and make it happen.",
+    "name": "Your name",
+    "email": "Your e-mail",
+    "message": "Your message",
+    "confirmation_prefix": "I've read the",
+    "privacy_policy": "privacy policy",
+    "confirmation_suffix": "and agree to the processings of my data as outlined.",
+    "button": "Send message",
+    "success": "Your message has been successfully transmitted."
+  },
+  "footer": {
+    "legal": "Legal notice"
+  }
+}
+
+

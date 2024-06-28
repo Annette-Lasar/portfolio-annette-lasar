@@ -1,0 +1,62 @@
+<section *ngIf="jsonContent">
+    <div class="wrapper">
+      <nav>
+        <ul>
+          <li>
+            <a [routerLink]="['']" fragment="about" (click)="closeMenu()"
+              ><h1
+                class="menu-link"
+                *ngIf="jsonContent.menu.about"
+                [ngClass]="{
+                  english: selectedLanguage === 'en',
+                  german: selectedLanguage === 'de',
+                  french: selectedLanguage === 'fr'
+                }"
+              >
+                {{ jsonContent.menu.about }}
+              </h1></a
+            >
+          </li>
+          <li>
+            <a [routerLink]="['']" fragment="skills" (click)="closeMenu()"
+              ><h1
+                class="menu-link"
+                *ngIf="jsonContent.menu.skills"
+                [ngClass]="{
+                  english: selectedLanguage === 'en',
+                  german: selectedLanguage === 'de',
+                  french: selectedLanguage === 'fr'
+                }"
+              >
+                {{ jsonContent.menu.skills }}
+              </h1></a
+            >
+          </li>
+          <li>
+            <a [routerLink]="['']" fragment="portfolio" (click)="closeMenu()"
+              ><h1
+                class="menu-link"
+                *ngIf="jsonContent.menu.portfolio"
+                [ngClass]="{
+                  english: selectedLanguage === 'en',
+                  german: selectedLanguage === 'de',
+                  french: selectedLanguage === 'fr'
+                }"
+              >
+                {{ jsonContent.menu.portfolio }}
+              </h1></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="menu-bottom">
+        <h2 class="menu-header" *ngIf="jsonContent.contact.greeting">
+          {{ jsonContent.contact.greeting }}
+        </h2>
+      </div>
+      <div class="menu-footer">
+        <po-footer></po-footer>
+      </div>
+    </div>
+  </section>
+  

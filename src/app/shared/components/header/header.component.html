@@ -1,0 +1,40 @@
+<section id="top" *ngIf="staticContent && jsonContent">
+    <img
+      *ngIf="staticContent.candidate_logo"
+      class="logo"
+      src="{{ staticContent.candidate_logo }}"
+      alt=""
+    />
+    <nav class="menu-box">
+      <div class="custom-select-container">
+        <div class="custom-select" (click)="toggleDropdown()">
+          <div class="custom-select-trigger">
+            <img [src]="selectedFlag" alt="" class="flag" />
+          </div>
+          <div [ngClass]="{ 'd-none': !dropdownOpen }" class="custom-options">
+            <div
+              class="custom-option"
+              *ngFor="let option of languageOptions"
+              (click)="selectLanguage(option, $event)"
+            >
+              <img [src]="option.flag" alt="" class="flag" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        (click)="toggleBurgerButton()"
+        [class.is-active]="isActive"
+        id="hamburger"
+        class="hamburger"
+      >
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </nav>
+  </section>
+  <po-menu [ngClass]="{ 'd-none': !menuActive }" class="main-menu"
+  [jsonContent]="jsonContent"
+  [selectedLanguage]="selectedLanguage"></po-menu>
+  

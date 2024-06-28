@@ -1,1 +1,197 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./scss-styles/fonts.scss";
+@import "./scss-styles/variables.scss";
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: $header-height;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $background-color-light;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $background-color-light;
+  border-radius: 8px;
+  border: $font-color 1px solid;
+}
+
+body {
+  margin: 0;
+  background-color: $background-color-light;
+  color: $font-color;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+#page {
+  scroll-behavior: smooth;
+  height: calc(100vh - $header-height);
+  overflow-y: auto;
+}
+
+h1,
+h2,
+h5 {
+  font-family: $heading-font-family;
+}
+
+h1 {
+  font-size: clamp(2rem, 9vw, 6rem);
+  font-weight: 800;
+  text-align: center;
+  font-family: $heading-font-family;
+}
+
+
+h2 {
+  margin: 0 0 1em;
+  font-size: clamp(1.5rem, 7vw, 4rem);
+  text-align: center;
+  font-weight: 800;
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+h3,
+h4,
+po-button,
+p,
+a {
+  font-family: $text-font-family;
+}
+
+h4 {
+  margin: 0.25em 0 0;
+  font-size: clamp(1.1rem, 5vw, 3rem);
+  font-weight: 800;
+  font-family: $text-font-family;
+  color: $accent-color;
+}
+
+h5 {
+  margin: 1em 0 0.5em;
+  font-size: clamp(1.5rem, 2vw, 1.6rem);
+  font-weight: 900;
+}
+
+po-button {
+  a {
+    margin: 0;
+    width: fit-content;
+    height: 50px;
+    margin: 0 auto;
+    padding: 1em 2em;
+    position: relative;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: $font-color;
+    box-shadow: 2px 2px 2px $shadow-color;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: transparent 4px solid;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: transparent 4px solid;
+    }
+    &:hover::before {
+      animation: border-top-right 0.75s linear forwards;
+    }
+    &:hover::after {
+      animation: border-left-bottom 0.75s linear forwards;
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+@keyframes border-top-right {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: $background-color-dark;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  50% {
+    width: 100%;
+    height: 0;
+    border-top-color: $background-color-dark;
+    border-right-color: $background-color-dark;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: $background-color-dark;
+    border-right-color: $background-color-dark;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+}
+
+@keyframes border-left-bottom {
+  0% {
+    width: 0;
+    height: 0;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: $background-color-dark;
+  }
+  50% {
+    width: 0;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: $background-color-dark;
+    border-left-color: $background-color-dark;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: $background-color-dark;
+    border-left-color: $background-color-dark;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+}
+
+.d-none {
+  display: none;
+}
+

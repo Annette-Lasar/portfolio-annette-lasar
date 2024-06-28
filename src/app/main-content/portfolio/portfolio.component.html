@@ -1,0 +1,29 @@
+<section *ngIf="staticContent && jsonContent">
+    <div class="wrapper">
+      <h2 id="portfolio" *ngIf="staticContent.portfolio.title">
+        {{ staticContent.portfolio.title }}
+      </h2>
+      <p *ngIf="jsonContent.portfolio.introduction" class="introduction">
+        {{ jsonContent.portfolio.introduction }}
+      </p>
+      <ul class="project-list">
+        <li>
+          <po-project
+            [staticContent]="staticContent"
+            [jsonContent]="jsonContent"
+            [staticContentProjects]="staticContent.portfolio.projects"
+            
+          >
+          </po-project>
+        </li>
+      </ul>
+    </div>
+    <div class="diagonal-arrow-box" (mouseover)="toggleHover(true)">
+      <img
+        src="{{ staticContent.arrows[1] }}"
+        alt=""
+        [class.hovered]="isHovered"
+      />
+    </div>
+  </section>
+  

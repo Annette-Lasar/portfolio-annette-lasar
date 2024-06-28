@@ -1,0 +1,99 @@
+@import "../../../scss-styles/variables.scss";
+
+.project-wrapper {
+  .img-box {
+    width: 90%;
+    margin: 1em auto;
+    max-width: 400px;
+    position: relative;
+    .frame-wrapper {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      &:hover {
+        opacity: 1;
+      }
+      &:hover .round-arrow {
+        animation: spinRoundArrow 0.5s ease-in-out forwards;
+      }
+      .frame {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border: $background-color-dark 1.5px solid;
+      }
+      .round-arrow {
+        height: 40px;
+        position: absolute;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.odd {
+  .img-box {
+    .frame {
+      top: 8px;
+      left: 8px;
+    }
+    .round-arrow {
+      top: 50%;
+      right: -28px;
+    }
+  }
+}
+
+.even {
+  .img-box {
+    .frame {
+      top: 8px;
+      left: 8px;
+    }
+    .round-arrow {
+      top: 50%;
+      left: -8px;
+    }
+  }
+}
+
+.img-box.scroll-animate {
+  transform: scale(1.2);
+}
+
+.text-wrapper {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.skills {
+  margin: 0.25em 0 0.5em;
+  display: flex;
+  align-items: center;
+  color: $accent-color;
+}
+
+.description {
+  font-size: 0.9rem;
+}
+
+@keyframes spinRoundArrow {
+  0% {
+    transform: scale(1) translateY(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.2) translateY(-50%) rotate(250deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

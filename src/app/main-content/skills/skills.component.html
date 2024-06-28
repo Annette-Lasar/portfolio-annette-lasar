@@ -1,0 +1,32 @@
+<section *ngIf="staticContent && jsonContent">
+    <div class="skill-wrapper">
+      <h2
+        id="skills"
+        *ngIf="jsonContent.skills.skills"
+        [ngClass]="{
+          english: isCurrentLanguage('en'),
+          german: isCurrentLanguage('de'),
+          french: isCurrentLanguage('fr')
+        }"
+      >
+        {{ jsonContent.skills.skills }}
+      </h2>
+      <div class="skill-box">
+        <div
+          *ngFor="let icon of staticContent?.candidate_skills"
+          class="icon-box"
+        >
+          <img src="{{ icon.icon_path }}" alt="" />
+          <p class="caption">{{ icon.caption }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="diagonal-arrow-box" (mouseover)="toggleHover(true)">
+      <img
+        src="{{ staticContent.arrows[1] }}"
+        alt=""
+        [class.hovered]="isHovered"
+      />
+    </div>
+  </section>
+  

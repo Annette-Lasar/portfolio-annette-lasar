@@ -1,0 +1,92 @@
+@import "../../../scss-styles/variables.scss";
+
+section {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: $text-font-family;
+}
+
+.field-holder {
+  margin: 0 0 16px;
+  position: relative;
+  width: 100%;
+  input,
+  textarea {
+    width: 100%;
+    padding-inline-start: 1em;
+    background-color: $background-color-dark;
+    outline: none;
+    border: none;
+    border-bottom: $background-color-light 1.5px solid;
+    font-family: $text-font-family;
+    color: $font-color-light;
+    transition: all 0.3s ease;
+    &:focus {
+      outline: none;
+      border: $background-color-light 2px solid;
+    }
+    &:focus + label,
+    &:valid + label,
+    &:not(:placeholder-shown) + label {
+      padding-inline: 0.25em;
+      font-size: 0.75rem;
+      top: calc(#{$input-field-height} * -0.5);
+      left: 12px;
+      background-color: $background-color-dark;
+      pointer-events: none;
+    }
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px $background-color-dark inset;
+      -webkit-text-fill-color: $font-color-light;
+    }
+
+    &:-moz-autofill {
+      box-shadow: 0 0 0px 1000px $background-color-dark inset;
+      color: $font-color-light;
+    }
+  }
+
+  input {
+    height: 48px;
+  }
+
+  textarea {
+    padding: 16px 0 0 1em;
+    resize: none;
+  }
+
+  label {
+    height: $input-field-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+input[type="submit"] {
+  width: fit-content;
+  margin: 1em auto 0;
+  padding: 1em 2em;
+  display: block;
+  background-color: $background-color-dark;
+  color: $font-color-light;
+  border: $background-color-light 4px solid;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.3;
+  }
+  &:hover,
+  &:not(disabled) {
+    padding-inline: 2.5em;
+    font-weight: 700;
+  }
+}

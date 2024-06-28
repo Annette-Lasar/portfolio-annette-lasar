@@ -1,0 +1,100 @@
+{
+  "german_flag": "assets/icons/flags/german_flag.svg",
+  "english_flag": "assets/icons/flags/english_flag.svg",
+  "french_flag": "assets/icons/flags/french_flag.svg",
+  "favicon": "assets/icons/logo_candiate_orange.svg",
+  "candidate_logo": "assets/icons/logo_candidate_dark.svg",
+  "candidate_name": "Annette Lasar",
+  "ink_blot": "assets/icons/ink_blot.svg",
+  "email": "a_lasar@web.de",
+  "arrows": [
+    "assets/icons/arrows_dark/arrow_1.svg",
+    "assets/icons/arrows_dark/arrow_2.svg",
+    "assets/icons/arrows_dark/arrow_3.svg"
+  ],
+  "candidate_photo": "assets/icons/annette_square.jpg",
+  "candidate_skills": [
+    {
+      "icon_path": "assets/icons/skill_icons/angular.svg",
+      "caption": "Angular"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/typescript.svg",
+      "caption": "TypeScript"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/javascript.svg",
+      "caption": "JavaScript"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/html.svg",
+      "caption": "HTML"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/css.svg",
+      "caption": "CSS"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/firebase.svg",
+      "caption": "Firebase"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/git.svg",
+      "caption": "Git"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/api.svg",
+      "caption": "API"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/scrum.svg",
+      "caption": "SCRUM"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/material_design.svg",
+      "caption": "Material Design"
+    },
+    {
+      "icon_path": "assets/icons/skill_icons/wordpress.svg",
+      "caption": "Wordpress"
+    }
+  ],
+  "portfolio": {
+    "title": "Portfolio",
+    "round_arrow": "arrow_round.svg",
+    "projects": {
+      "join": {
+        "title": "Join", 
+        "path": "join.png",
+        "skills": ["HTML", "CSS", "JavaScript"],
+        "code_button": "Github"
+      },
+      "mermaid": {
+        "title": "Mermaid", 
+        "path": "mermaid.png",
+        "skills": ["HTML", "CSS", "JavaScript/ OOP"],
+        "code_button": "Github"
+      },
+      "pokedex": {
+        "title": "Pokédex", 
+        "path": "pokedex.png",
+        "skills": ["HTML", "CSS", "JavaScript", "API"],
+        "code_button": "Github"
+      },
+      "da_bubble": {
+        "title": "DABubble", 
+        "path": "bubble.png",
+        "skills": ["HTML", "CSS", "TypeScript", "Angular", "Firebase"],
+        "code_button": "Github"
+      }
+    }
+  },
+  "arrow_up": [
+    "assets/icons/arrows_light/arrow_1.svg",
+    "assets/icons/arrows_light/arrow_2.svg"
+  ],
+  "copyright": "&copy; Annette Lasar",
+  "github_logo": "assets/icons/contact_logos/github.svg",
+  "email_logo": "assets/icons/contact_logos/e_mail.svg",
+  "linkedin_logo": "assets/icons/contact_logos/linkedin.svg"
+}

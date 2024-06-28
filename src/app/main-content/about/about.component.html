@@ -1,0 +1,32 @@
+<section *ngIf="staticContent && jsonContent">
+    <h2 id="about">{{ jsonContent.about.about }}</h2>
+    <div class="wrapper">
+      <div class="text-box">
+        <p>
+          {{ jsonContent.about.description }}
+        </p>
+        <p>{{ jsonContent.about.request_to_contact }}</p>
+        <po-button [caption]="jsonContent.about.button"></po-button>
+      </div>
+      <div class="img-box">
+        <img
+          *ngIf="staticContent?.candidate_photo"
+          src="{{ staticContent.candidate_photo }}"
+          alt=""
+        />
+        <div class="frame"></div>
+      </div>
+    </div>
+    <div
+      class="diagonal-arrow-box"
+      (mouseover)="toggleHover(true)"
+      
+    >
+      <img
+        src="{{ staticContent.arrows[1] }}"
+        alt=""
+        [class.hovered]="isHovered"
+      />
+    </div>
+  </section>
+  

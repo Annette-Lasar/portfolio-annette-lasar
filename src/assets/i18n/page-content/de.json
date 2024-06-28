@@ -1,0 +1,65 @@
+{
+  "menu": {
+    "about": "Über mich",
+    "skills": "Meine Fähigkeiten",
+    "portfolio": "Portfolio"
+  },
+  "hero": {
+    "profession": "Frontend Developer",
+    "button": "Nachricht senden"
+  },
+  "about": {
+    "about": "Über mich",
+    "description": "Ich bin eine Frontend-Entwicklerin aus der Nähe von Heilbronn, Deutschland. I habe Spaß daran, Designern und Firmen dabei zu helfen, ihre Ideen zum Leben zu erwecken. Ich freue mich darauf, meine Karriere in einem Job in der Position eines Junior Developers fortzusetzen.",
+    "request_to_contact": "Wenn Sie glauben, dass ich gut für Ihre Projekte geeignet bin, kontaktieren Sie mich!",
+    "button": "Reden wir"
+  },
+  "skills": {
+    "skills": "Meine Fähigkeiten"
+  },
+  "portfolio": {
+    "introduction": "Erkunden Sie hier eine Auswahl meiner Arbeit. - Probieren Sie die Projekte aus, um meine Fähigkeiten in Aktion zu sehen. Beim Programmieren folge ich stets dem Grundsatz 'Small Screen First'.",
+    "projects": [
+      {
+        "join": {
+          "description": "Vom Kanban System inspirierte Anwendung zur Verwaltung von Aufgaben. Erstellen Sie Aufgaben und organisieren Sie sie, indem Sie die Drag and Drop-Funktion verwenden, und weisen Sie ihnen Nutzer und Kategorien zu.",
+          "test_button": "Ausprobieren"
+        }
+      },
+      {
+        "mermaid": {
+          "description": "Ein Schwimm-und-Schieß-Spiel, das auf einem objektorientierten Ansatz basiert. Helfen Sie dem Meermädchen, Perlen und Sterne zu finden, um gegen verschiedene Meerestiere zu kämpfen, und sammeln Sie den goldenen Schlüssel ein, um am Ende die Schatztruhe zu öffnen.",
+          "test_button": "Ausprobieren"
+        }
+      },
+      {
+        "pokedex": {
+          "description": "Diese App basiert auf der PokéAPI, einer einfachen Bibliothek, und liefert und katalogisiert Informationen über Pokémons.",
+          "test_button": "Ausprobieren"
+        }
+      },
+      {
+        "da_bubble": {
+          "description": "Eine Messaging-App, die es Nutzern ermöglicht Kanäle zu erstellen und in Echtzeit zu kommunizieren.",
+          "test_button": "Ausprobieren"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "greeting": "Sagen Sie Hallo!",
+    "question": "Möchten Sie über ein neues Projekt sprechen?",
+    "request_to_contact": "Sagen Sie Hallo! Besprechen wir Ihre Ideen und legen wir los.",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail-Adresse",
+    "message": "Ihre Nachricht",
+    "confirmation_prefix": "Ich habe die",
+    "privacy_policy": "Datenschutzbestimmungen",
+    "confirmation_suffix": "gelesen und stimme der Verarbeitung meiner Daten gemäß den Angaben zu.",
+    "button": "Nachricht senden", 
+    "success": "Ihre Nachricht wurde erfolgreich versandt."
+  },
+  "footer": {
+    "legal": "Impressum"
+  }
+}

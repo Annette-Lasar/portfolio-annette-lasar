@@ -1,0 +1,46 @@
+@import "../../../scss-styles/variables.scss";
+
+section {
+  padding: 0 1em;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.introduction {
+  max-width: 600px;
+  margin: 0 auto 2em;
+}
+
+p,
+ul,
+button {
+  font-family: $text-font-family;
+}
+
+img {
+  filter: grayscale(100%);
+  &:hover {
+    filter: grayscale(0%);
+  }
+}
+
+.diagonal-arrow-box {
+  max-width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 2em;
+  position: relative;
+  img {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    transform: rotate(45deg);
+    transition: transform .75s linear;
+    &.hovered {
+      transform: translateX(-100px) translateY(100px) rotate(45deg);
+    }
+  }
+}

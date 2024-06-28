@@ -1,0 +1,114 @@
+@import "../../../../scss-styles/variables.scss";
+
+section {
+  background-color: $background-color-dark;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  height: $footer-height-small;
+  padding: 1em;
+  display: grid;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "icons"
+    "logo"
+    "candidate"
+    "legal";
+  align-items: center;
+  justify-items: center;
+}
+
+.candiate-logo-box {
+  img {
+    height: 32px;
+    filter: invert(91%) sepia(2%) saturate(2879%) hue-rotate(321deg)
+      brightness(109%) contrast(105%);
+    color: $background-color-light;
+  }
+}
+
+.icons {
+  width: 80%;
+  max-width: 300px;
+  grid-area: icons;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  img {
+    height: 36px;
+  }
+  img:hover {
+    transform: translateY(-8px);
+  }
+}
+a {
+  color: $background-color-light;
+  cursor: pointer;
+}
+
+.candiate-logo-box {
+  grid-area: logo;
+}
+
+.name-box {
+  grid-area: candidate;
+  p {
+    color: $background-color-light;
+  }
+  .name {
+    display: none;
+  }
+}
+
+.legal-box {
+  grid-area: legal;
+}
+
+@media (min-width: 50em) {
+  .wrapper {
+    height: $footer-height-large;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 40px 28px;
+    grid-template-areas:
+      "logo icons"
+      "candidate legal";
+    align-content: end;
+    align-items: flex-end;
+  }
+
+  .candiate-logo-box {
+    width: 100%;
+    display: grid;
+    .img {
+      justify-self: start;
+    }
+  }
+
+  .icons {
+    width: 200px;
+    justify-self: flex-end;
+  }
+
+  .name-box {
+    width: 100%;
+    display: grid;
+    .name {
+      display: block;
+      justify-self: flex-start;
+    }
+    .email {
+      display: none;
+    }
+  }
+
+  .legal-box {
+    width: 100%;
+    display: grid;
+    .legal {
+      justify-self: flex-end;
+    }
+  }
+}

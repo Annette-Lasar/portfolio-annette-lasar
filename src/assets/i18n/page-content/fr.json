@@ -1,0 +1,64 @@
+{
+  "menu": {
+    "about": "À propos de moi",
+    "skills": "Mes compétences",
+    "portfolio": "Portfolio"
+  },
+  "hero": {
+    "profession": "Développeuse Frontend",
+    "button": "Envoyer un message"
+  },
+  "about": {
+    "about": "À propos de moi",
+    "description": "Je suis développeuse front-end basé près de Heilbronn, en Allemagne. J'aime aider les designers et les entreprises à concrétiser leurs idées. J'ai hâte de poursuivre ma carrière de développeuse avec un poste de développeur web junior.",
+    "request_to_contact": "Si vous pensez que je serais un bon choix pour vos projets, contactez-moi !",
+    "button": "Parlons"
+  },
+  "skills": {
+    "skills": "Mes compétences"
+  },
+  "portfolio": {
+    "introduction": "Découvrez une sélection de mon travail ici. Interagissez avec les projets pour voir mes compétences en action. Lors de la programmation, je suis toujours le principe du 'Small Screen First'.",
+    "projects": [
+      {
+        "join": {
+          "description": "Gestionnaire de tâches inspiré du système Kanban. Créez et organisez des tâches à l'aide de fonctions de glisser-déposer, assignez des utilisateurs et des catégories.",
+          "test_button": "Essayez"
+        }
+      },
+      {
+        "mermaid": {
+          "description": "Un jeu de nage et de tir basé sur une approche orientée objet. Aidez la sirène à trouver des perles et des étoiles pour combattre une variété d'animax marins et à collecter la clé dorée pour à la fin ouvrir le coffre au trésor.",
+          "test_button": "Essayez"
+        }
+      },
+      {
+        "pokedex": {
+          "description": "Basée sur l'API Poké, une bibliothèque simple qui fournit et catalogue des informations sur les Pokémons.",
+          "test_button": "Essayez"
+        }
+      },
+      {
+        "da_bubble": {
+          "description": "Une application de messagerie qui permet aux utilisateurs de créer des canaux et de communiquer en temps réel.",
+          "test_button": "Essayez"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "greeting": "Dites Bonjour!",
+    "question": "Envie de discuter d'un nouveau projet?",
+    "request_to_contact": "Dites bonjour! Parlons de vos idées et réalisons-les.",
+    "name": "Votre nom",
+    "email": "Votre e-mail",
+    "message": "Votre message",
+    "confirmation_prefix": "J'ai lu la",
+    "privacy_policy": "politique de confidentialité",
+    "confirmation_suffix": "et accepte le traitement de mes données tel que décrit.",
+    "button": "Envoyer le message"
+  },
+  "footer": {
+    "legal": "Mentions légales"
+  }
+}

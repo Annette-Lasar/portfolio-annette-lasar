@@ -1,0 +1,45 @@
+<section *ngIf="staticContent && jsonContent">
+    <div class="wrapper">
+      <div class="icons">
+        <a href="#">
+          <img
+            *ngIf="staticContent.github_logo"
+            src="{{ staticContent.github_logo }}"
+            alt=""
+          />
+        </a>
+        <a href="#">
+          <img
+            *ngIf="staticContent.email_logo"
+            src="{{ staticContent.email_logo }}"
+            alt=""
+          />
+        </a>
+        <a href="#">
+          <img
+            *ngIf="staticContent.linkedin_logo"
+            src="{{ staticContent.linkedin_logo }}"
+            alt=""
+          />
+        </a>
+      </div>
+      <div class="candiate-logo-box">
+        <img
+          *ngIf="staticContent.candidate_logo"
+          src="{{ staticContent.candidate_logo }}"
+          alt=""
+        />
+      </div>
+      <div class="name-box">
+        <p *ngIf="staticContent.email" class="email">{{staticContent.email}}</p>
+        <p *ngIf="staticContent.candidate_name" class="name">
+          &copy; {{ staticContent.candidate_name }}
+        </p>
+      </div>
+  
+      <div class="legal-box">
+        <a *ngIf="jsonContent.footer.legal" routerLink="imprint" class="legal">{{jsonContent.footer.legal}}</a>
+      </div>
+    </div>
+  </section>
+  
