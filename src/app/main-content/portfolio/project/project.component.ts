@@ -39,8 +39,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    AOS.init({ duration: 750, delay: 150 });
-
+    // AOS.init({ duration: 750, delay: 150 });
     this.staticContentService
       .getStaticContent()
       .pipe(
@@ -53,6 +52,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
         if (data) {
           this.staticContent = data;
           this.staticContentProjects = data.portfolio.projects;
+          AOS.refresh();
         }
       });
 
@@ -68,14 +68,24 @@ export class ProjectComponent implements OnInit, AfterViewInit {
       .subscribe();
   }
 
-  ngAfterViewInit(): void {
+  /*   ngAfterViewInit(): void {
+    console.log('Fertig geladen.');
     if (isPlatformBrowser(this.platformId)) {
       this.document.addEventListener('DOMContentLoaded', () => {
         console.log('doc loaded');
         console.log('Page ready');
-        AOS.init();
-        AOS.refresh();
+        AOS.init({ duration: 750, delay: 150 });
+        // AOS.refresh();
       });
+    }
+  }
+ */
+
+  ngAfterViewInit(): void {
+    console.log('Fertig geladen.');
+    if (isPlatformBrowser(this.platformId)) {
+      AOS.init({ duration: 750, delay: 150 });
+      console.log('AOS initialized.');
     }
   }
 
