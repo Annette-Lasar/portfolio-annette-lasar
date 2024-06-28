@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { TranslationService } from '../../shared/services/translation.service';
-import { Translations } from '../../shared/interfaces/translations.interface';
+import { TranslationService } from '../../../shared/services/translation.service';
+import { Translations } from '../../../shared/interfaces/translations.interface';
 
 
 @Component({

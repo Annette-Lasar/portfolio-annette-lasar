@@ -6,6 +6,7 @@ import { TranslationService } from '../../shared/services/translation.service';
 import { Translations } from '../../shared/interfaces/translations.interface';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @Component({
   selector: 'po-skills',
   standalone: true,
@@ -24,6 +25,7 @@ export class SkillsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+   
     this.staticContentService.getStaticContent().subscribe((data: Static) => {
       this.staticContent = data;
     });

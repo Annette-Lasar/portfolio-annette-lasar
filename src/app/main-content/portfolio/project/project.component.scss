@@ -1,11 +1,14 @@
-@import "../../../scss-styles/variables.scss";
+@import "../../../../scss-styles/variables.scss";
 
 .project-wrapper {
+  margin: 0 0 2em;
+  border: red 1px solid;
   .img-box {
     width: 90%;
     margin: 1em auto;
     max-width: 400px;
     position: relative;
+
     .frame-wrapper {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -31,6 +34,9 @@
 }
 
 .odd {
+  h3 {
+    text-align: right;
+  }
   .img-box {
     .frame {
       top: 8px;
@@ -44,6 +50,9 @@
 }
 
 .even {
+  h3 {
+    text-align: left;
+  }
   .img-box {
     .frame {
       top: 8px;
@@ -60,10 +69,15 @@
   transform: scale(1.2);
 }
 
-.text-wrapper {
+.text-wrapper,
+h3 {
   width: 90%;
   margin: 0 auto;
   max-width: 400px;
+}
+
+h3 {
+  border: blue 1px solid;
 }
 
 .skills {

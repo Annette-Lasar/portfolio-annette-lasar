@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 import { TranslationService } from '../../shared/services/translation.service';
 import { Translations } from '../../shared/interfaces/translations.interface';
+
 
 
 @Component({
