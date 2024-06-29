@@ -19,6 +19,9 @@ export class ContactFormComponent implements OnInit {
   fields: Array<{ type: string; id: keyof ContactData; placeholder: string }> = [];
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
+  name: string = '';
+  email: string = '';
+  message: string = '';
   contactData: ContactData = {
     name: '',
     email: '',
@@ -37,7 +40,7 @@ export class ContactFormComponent implements OnInit {
       (data: Translations | null) => {
         this.jsonContent = data;
         if (data) {
-          this.initializeFields();
+          // this.initializeFields();
         }
       }
     );
@@ -47,7 +50,7 @@ export class ContactFormComponent implements OnInit {
       .subscribe();
   }
 
-  initializeFields(): void {
+/*   initializeFields(): void {
     if (this.jsonContent) {
       this.fields = [
         {
@@ -67,7 +70,7 @@ export class ContactFormComponent implements OnInit {
         },
       ];
     }
-  }
+  } */
 
     getErrorMessage(fieldId: string): string {
       if (this.jsonContent) {
@@ -81,7 +84,12 @@ export class ContactFormComponent implements OnInit {
       return '';
     }
     
-  
+  formtest(e:any, ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid) {
+      console.log(123);
+    }
+    e.preventDefault();
+  }
 
   onSubmit(ngForm: NgForm) {
     if (ngForm.valid && ngForm.submitted) {

@@ -39,8 +39,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    // AOS.init({ duration: 750, delay: 150 });
-    AOS.init();
+    // AOS.init();
     this.staticContentService
       .getStaticContent()
       .pipe(
@@ -53,7 +52,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
         if (data) {
           this.staticContent = data;
           this.staticContentProjects = data.portfolio.projects;
-          AOS.refresh();
+          // AOS.refresh();
         }
       });
 

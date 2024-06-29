@@ -72,13 +72,17 @@ form {
   }
 }
 
+input:hover, textarea:hover {
+  border: $background-color-light 2px solid;
+}
+
 .input-icon {
   position: relative;
 }
 
 .input-icon input,
 .input-icon textarea {
-  padding-right: 40px; /* Platz für das Icon */
+  padding-right: 40px;
 }
 
 .input-icon::after {

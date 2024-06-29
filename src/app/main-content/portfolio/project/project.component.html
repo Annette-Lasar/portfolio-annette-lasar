@@ -47,7 +47,7 @@
   } @empty { 'No projects available' }
 </article> -->
 
-<article *ngIf="staticContent && jsonContent && staticContentProjects">
+<!-- <article *ngIf="staticContent && jsonContent && staticContentProjects">
   <div class="project-wrapper odd">
     <h3>1 / 3</h3>
     <div class="img-box">
@@ -145,6 +145,103 @@
         <po-button
           [caption]="staticContentProjects['pokedex'].code_button"
         ></po-button>
+      </div>
+    </div>
+  </div>
+</article> -->
+
+<article>
+  <div class="project-wrapper odd">
+    <h3>1 / 3</h3>
+    <div class="img-box">
+      <img src="assets/img/projects/join.png" alt="" />
+      <div class="frame-wrapper">
+        <div class="frame"></div>
+        <img
+          class="round-arrow"
+          src="assets/icons/arrows_dark/arrow_round.svg"
+        />
+      </div>
+    </div>
+    <div class="text-wrapper" data-aos="fade-down">
+      <h5>Join</h5>
+      <div class="skills">
+        <span>HTML</span> | <span>CSS</span> |
+        <span>JavaScript</span>
+      </div>
+      <div class="description">
+        Task manager inspired by the Kanban System. Create and organize tasks
+        using drag and drop functions, assign users and categories.
+      </div>
+      <!-- <div>
+        <po-button [caption]="'Try it out'"></po-button>
+        <po-button [caption]="'Github'"></po-button>
+      </div> -->
+    </div>
+  </div>
+  <div class="project-wrapper even">
+    <h3>2 / 3</h3>
+    <div class="img-box">
+      <img src="assets/img/projects/mermaid.png" alt="" />
+      <div class="frame-wrapper">
+        <div class="frame"></div>
+        <img
+          class="round-arrow"
+          src="assets/icons/arrows_dark/arrow_round.svg"
+        />
+      </div>
+    </div>
+    <div class="text-wrapper" data-aos="fade-down">
+      <h5>Mermaid</h5>
+      <div class="skills">
+        <span>HTML</span> | <span>CSS</span> |
+        <span>JavaScript&#47; OOP</span>
+      </div>
+      <div class="description">
+        A swim-and-shoot game based on an object-oriented approach. Help the
+        mermaid to find pearls and stars to fight against a variety of fish and
+        collect the golden key to open the treasure chest in the end.
+      </div>
+      <div>
+        <!-- <po-button
+          [caption]="'Try it out'"
+        ></po-button>
+        <po-button
+          [caption]="'Github'"
+        ></po-button> -->
+      </div>
+    </div>
+  </div>
+  <div class="project-wrapper odd">
+    <h3>3 / 3</h3>
+    <div class="img-box">
+      <img src="assets/img/projects/pokedex.png" alt="" />
+      <div class="frame-wrapper">
+        <div class="frame"></div>
+        <img
+          class="round-arrow"
+          src="assets/icons/arrows_dark/arrow_round.svg"
+        />
+      </div>
+    </div>
+    <div class="text-wrapper" data-aos="fade-down">
+      <h5>Pokédex</h5>
+      <div class="skills">
+        <span>HTML</span> |
+        <span>CSS</span> |
+        <span>JavaScript</span> |
+        <span>API</span>
+      </div>
+      <div class="description">
+        Based on the PokéAPI a simple library that provides and catalogues pokemon information.
+      </div>
+      <div>
+        <!-- <po-button
+          [caption]="'Try it out'"
+        ></po-button>
+        <po-button
+          [caption]="'Github'"
+        ></po-button> -->
       </div>
     </div>
   </div>
