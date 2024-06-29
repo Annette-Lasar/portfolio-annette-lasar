@@ -40,6 +40,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // AOS.init({ duration: 750, delay: 150 });
+    AOS.init();
     this.staticContentService
       .getStaticContent()
       .pipe(

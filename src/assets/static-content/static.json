@@ -61,23 +61,23 @@
   ],
   "portfolio": {
     "title": "Portfolio",
-    "round_arrow": "arrow_round.svg",
+    "round_arrow": "assets/icons/arrows_dark/arrow_round.svg",
     "projects": {
       "join": {
         "title": "Join", 
-        "path": "join.png",
+        "path": "assets/img/projects/join.png",
         "skills": ["HTML", "CSS", "JavaScript"],
         "code_button": "Github"
       },
       "mermaid": {
         "title": "Mermaid", 
-        "path": "mermaid.png",
+        "path": "assets/img/projects/mermaid.png",
         "skills": ["HTML", "CSS", "JavaScript/ OOP"],
         "code_button": "Github"
       },
       "pokedex": {
         "title": "Pokédex", 
-        "path": "pokedex.png",
+        "path": "assets/img/projects/pokedex.png",
         "skills": ["HTML", "CSS", "JavaScript", "API"],
         "code_button": "Github"
       },
