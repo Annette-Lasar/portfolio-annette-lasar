@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, ContentChild, OnInit } from '@angular/core';
+import { StaticContentService } from '../../../shared/services/static-content.service';
+import { Static } from '../../../shared/interfaces/static-content.interface';
 import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslationService } from '../../../shared/services/translation.service';
@@ -15,6 +17,7 @@ import { ContactData } from '../../../shared/interfaces/contact-data.interface';
 })
 export class ContactFormComponent implements OnInit {
   fields: Array<{ type: string; id: keyof ContactData; placeholder: string }> = [];
+  staticContent: Static | null = null;
   jsonContent: Translations | null = null;
   contactData: ContactData = {
     name: '',
@@ -22,9 +25,14 @@ export class ContactFormComponent implements OnInit {
     message: '',
   }
 
-  constructor(private translationService: TranslationService) {}
+  constructor(
+    private staticContentService: StaticContentService,
+    private translationService: TranslationService) {}
 
   ngOnInit(): void {
+    this.staticContentService.getStaticContent().subscribe((data: Static) => {
+      this.staticContent = data;
+    });
     this.translationService.translations$.subscribe(
       (data: Translations | null) => {
         this.jsonContent = data;

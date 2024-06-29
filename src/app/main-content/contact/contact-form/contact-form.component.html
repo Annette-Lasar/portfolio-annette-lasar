@@ -1,4 +1,4 @@
-<section *ngIf="jsonContent">
+<!-- <section *ngIf="jsonContent">
   <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     @for(field of fields; track field.id) {
     <div class="field-holder">
@@ -12,7 +12,7 @@
           name="{{ field.id }}"
           [pattern]="
             field.type === 'email'
-              ? '[a-zA-Z0-9._%+/-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+              ? '[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}'
               : ''
           "
           #inputField="ngModel"
@@ -39,6 +39,73 @@
         <div class="validation-message">{{ jsonContent.contact.enter_message }}</div>
         }
         <label for="{{ field.id }}">{{ field.placeholder }}</label>
+      </ng-template>
+    </div>
+    }
+    <input type="submit" value="{{ jsonContent.contact.button }}" />
+  </form>
+</section>
+ -->
+
+<section *ngIf="jsonContent && staticContent">
+  <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    @for(field of fields; track field.id; let i = $index) {
+    <div class="field-holder">
+      <ng-container *ngIf="field.type !== 'textarea'; else textareaField">
+        <div
+          [ngClass]="{
+            'input-icon': true,
+            valid: inputField.valid && inputField.touched,
+            invalid: !inputField.valid && inputField.touched
+          }"
+        >
+          <input
+            placeholder=" "
+            [type]="field.type"
+            id="{{ field.id }}"
+            required
+            [(ngModel)]="contactData[field.id]"
+            name="{{ field.id }}"
+            [pattern]="
+              field.type === 'email'
+                ? '[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}'
+                : ''
+            "
+            #inputField="ngModel"
+          />
+          <label [for]="field.id">{{ field.placeholder }}</label>
+        </div>
+        @if (!inputField.valid && inputField.touched) {
+        <div class="validation-message">
+          {{ getErrorMessage(field.id) }}
+        </div>
+        }
+      </ng-container>
+      <ng-template #textareaField>
+        <div
+          [ngClass]="{
+            'input-icon': true,
+            valid: messageField.valid && messageField.touched,
+            invalid: !messageField.valid && messageField.touched
+          }"
+        >
+          <textarea
+            placeholder=" "
+            id="{{ field.id }}"
+            rows="8"
+            required
+            [(ngModel)]="contactData[field.id]"
+            name="{{ field.id }}"
+            #messageField="ngModel"
+            minlength="4"
+          ></textarea>
+          @if (!messageField.valid && messageField.touched) {
+          <div class="validation-message">
+            {{ jsonContent.contact.enter_message }}
+          </div>
+          }
+          <label for="{{ field.id }}">{{ field.placeholder }}</label>
+        </div>
       </ng-template>
     </div>
     }

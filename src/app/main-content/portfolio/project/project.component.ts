@@ -68,23 +68,11 @@ export class ProjectComponent implements OnInit, AfterViewInit {
       .subscribe();
   }
 
-  /*   ngAfterViewInit(): void {
-    console.log('Fertig geladen.');
-    if (isPlatformBrowser(this.platformId)) {
-      this.document.addEventListener('DOMContentLoaded', () => {
-        console.log('doc loaded');
-        console.log('Page ready');
-        AOS.init({ duration: 750, delay: 150 });
-        // AOS.refresh();
-      });
-    }
-  }
- */
 
   ngAfterViewInit(): void {
     console.log('Fertig geladen.');
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init({ duration: 750, delay: 150 });
+      AOS.init(); // HIER INHALT AUS AOS.init GELÖSCHT.
       console.log('AOS initialized.');
     }
   }

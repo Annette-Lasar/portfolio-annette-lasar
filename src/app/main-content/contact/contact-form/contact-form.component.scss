@@ -72,6 +72,35 @@ form {
   }
 }
 
+.input-icon {
+  position: relative;
+}
+
+.input-icon input,
+.input-icon textarea {
+  padding-right: 40px; /* Platz für das Icon */
+}
+
+.input-icon::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.input-icon.invalid::after {
+  background-image: url("../../../../assets/icons/user_interaction/alert_icon.svg");
+}
+
+.input-icon.valid::after {
+  background-image: url("../../../../assets/icons/user_interaction/success_icon.svg");
+}
+
 .validation-message {
   margin: 0.5em 0;
   color: $warning-color;

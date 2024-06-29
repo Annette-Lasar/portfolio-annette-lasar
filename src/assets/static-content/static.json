@@ -96,5 +96,7 @@
   "copyright": "&copy; Annette Lasar",
   "github_logo": "assets/icons/contact_logos/github.svg",
   "email_logo": "assets/icons/contact_logos/e_mail.svg",
-  "linkedin_logo": "assets/icons/contact_logos/linkedin.svg"
+  "linkedin_logo": "assets/icons/contact_logos/linkedin.svg",
+  "warning_icon": "assets/icons/user_interaction/warning_icon.svg",
+  "success_icon": "assets/icons/user_interaction/succes_icon.svg"
 }
