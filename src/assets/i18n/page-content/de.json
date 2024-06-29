@@ -57,6 +57,9 @@
     "privacy_policy": "Datenschutzbestimmungen",
     "confirmation_suffix": "gelesen und stimme der Verarbeitung meiner Daten gemäß den Angaben zu.",
     "button": "Nachricht senden", 
+    "enter_name": "Bitte geben Sie Ihren Namen ein!",
+    "enter_email": "Bitte geben Sie Ihre E-Mail-Adresse ein!",
+    "enter_message": "Bitte geben Sie eine Nachricht ein!",
     "success": "Ihre Nachricht wurde erfolgreich versandt."
   },
   "footer": {

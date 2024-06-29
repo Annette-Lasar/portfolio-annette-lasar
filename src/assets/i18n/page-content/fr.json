@@ -56,7 +56,11 @@
     "confirmation_prefix": "J'ai lu la",
     "privacy_policy": "politique de confidentialité",
     "confirmation_suffix": "et accepte le traitement de mes données tel que décrit.",
-    "button": "Envoyer le message"
+    "button": "Envoyer le message",
+    "enter_name": "Veuillez saisir votre nom!",
+    "enter_email": "Veuillez saisir votre adresse e-mail!",
+    "enter_message": "Veuillez saisir un message!",
+    "success": "Votre message a été transmis avec succès."
   },
   "footer": {
     "legal": "Mentions légales"

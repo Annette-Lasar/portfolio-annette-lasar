@@ -2,13 +2,12 @@
 
 .project-wrapper {
   margin: 0 0 2em;
-  border: red 1px solid;
   .img-box {
     width: 90%;
     margin: 1em auto;
     max-width: 400px;
     position: relative;
-
+    border: green 1px solid;
     .frame-wrapper {
       opacity: 0;
       transition: opacity 0.3s ease;
@@ -17,6 +16,10 @@
       }
       &:hover .round-arrow {
         animation: spinRoundArrow 0.5s ease-in-out forwards;
+      }
+      &:hover .project-img {
+        filter: grayscale(0%);
+        border: red 1px solid;
       }
       .frame {
         height: 100%;
@@ -31,6 +34,10 @@
       }
     }
   }
+}
+
+.project-img {
+  filter: grayscale(100%);
 }
 
 .odd {
@@ -65,10 +72,6 @@
   }
 }
 
-.img-box.scroll-animate {
-  transform: scale(1.2);
-}
-
 .text-wrapper,
 h3 {
   width: 90%;
@@ -98,16 +101,5 @@ h3 {
 
   100% {
     transform: scale(1.2) translateY(-50%) rotate(250deg);
-  }
-}
-
-@keyframes fade-in {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
   }
 }

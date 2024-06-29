@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ContentChild, OnInit } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslationService } from '../../../shared/services/translation.service';
 import { Translations } from '../../../shared/interfaces/translations.interface';
-
+import { ContactData } from '../../../shared/interfaces/contact-data.interface';
 
 @Component({
   selector: 'po-contact-form',
@@ -14,13 +14,16 @@ import { Translations } from '../../../shared/interfaces/translations.interface'
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent implements OnInit {
-  fields: Array<{ type: string; id: string; placeholder: string }> = [];
+  fields: Array<{ type: string; id: keyof ContactData; placeholder: string }> = [];
   jsonContent: Translations | null = null;
+  contactData: ContactData = {
+    name: '',
+    email: '',
+    message: '',
+  }
 
   constructor(private translationService: TranslationService) {}
 
-
-  
   ngOnInit(): void {
     this.translationService.translations$.subscribe(
       (data: Translations | null) => {
@@ -57,5 +60,24 @@ export class ContactFormComponent implements OnInit {
       ];
     }
   }
-}
 
+    getErrorMessage(fieldId: string): string {
+      if (this.jsonContent) {
+        if (fieldId === 'name' && this.jsonContent.contact.enter_name) {
+          return this.jsonContent.contact.enter_name;
+        }
+        if (fieldId === 'email' && this.jsonContent.contact.enter_email) {
+          return this.jsonContent.contact.enter_email;
+        }
+      }
+      return '';
+    }
+    
+  
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.valid && ngForm.submitted) {
+      console.log(this.contactData);
+    }
+  }
+}

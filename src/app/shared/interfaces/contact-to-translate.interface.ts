@@ -9,5 +9,8 @@ export interface ContactToTranslate {
     privacy_policy: string;
     confirmation_suffix: string;
     button: string;
+    enter_name: string;
+    enter_email: string;
+    enter_message: string;
     success: string;
 }

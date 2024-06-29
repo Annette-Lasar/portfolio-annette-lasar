@@ -20,13 +20,6 @@ button {
   font-family: $text-font-family;
 }
 
-img {
-  filter: grayscale(100%);
-  &:hover {
-    filter: grayscale(0%);
-  }
-}
-
 .diagonal-arrow-box {
   max-width: 200px;
   height: 200px;
