@@ -1,0 +1,19 @@
+@import "../../scss-styles/variables.scss";
+
+section {
+    min-height: calc(100vh - $header-height - $footer-height-small);
+    min-height: calc(100dvh - $header-height - $footer-height-small);
+    padding: 1em;
+}
+
+.wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+@media (min-width: 50em) {
+    section {
+        min-height: calc(100vh - $header-height - $footer-height-large);
+        min-height: calc(100dvh - $header-height - $footer-height-large);
+    }
+}

@@ -67,6 +67,42 @@ a {
   grid-area: legal;
 }
 
+.menu-footer {
+  height: $menu-footer-height;
+  .wrapper {
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 32px;
+    grid-template-areas:
+      "candidate legal";
+    align-content: end;
+    align-items: flex-end;
+  }
+
+  .candiate-logo-box {
+    display: none;
+  }
+
+  .name-box {
+    justify-self: flex-start;
+    .name {
+      display: none;
+    }
+    .email {
+      
+      display: unset;
+    }
+  }
+
+  .legal-box {
+    display: none;
+  }
+
+  .icons {
+    grid-area: legal;
+  }
+}
+
 @media (min-width: 50em) {
   .wrapper {
     height: $footer-height-large;

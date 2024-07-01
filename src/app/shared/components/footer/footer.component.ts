@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { StaticContentService } from '../../services/static-content.service';
 import { Static } from '../../interfaces/static-content.interface';
@@ -18,6 +18,7 @@ import { Translations } from '../../interfaces/translations.interface';
 export class FooterComponent implements OnInit {
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
+  @Input() isMenuFooter: boolean = false;
 
   constructor(
     private staticContentService: StaticContentService,

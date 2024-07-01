@@ -1,4 +1,4 @@
-<section *ngIf="staticContent && jsonContent">
+<section *ngIf="staticContent && jsonContent" [ngClass]="{ 'menu-footer': isMenuFooter }">
     <div class="wrapper">
       <div class="icons">
         <a href="#">

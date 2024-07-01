@@ -4,12 +4,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: $header-height;
+  
 }
-
-/* * {
-  box-sizing: border-box;
-} */
 
 *::-webkit-scrollbar {
   width: 16px;
@@ -26,20 +22,13 @@ html {
 }
 
 body {
-  // margin: 0;
   background-color: $background-color-light;
   color: $font-color;
-  overflow: hidden;
+  // scroll-padding-top: 80px;
 }
 
 img {
   max-width: 100%;
-}
-
-#page {
-  scroll-behavior: smooth;
-  height: calc(100vh - $header-height);
-  overflow-y: auto;
 }
 
 h1,

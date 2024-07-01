@@ -3,7 +3,7 @@
       <nav>
         <ul>
           <li>
-            <a [routerLink]="['']" fragment="about" (click)="closeMenu()"
+            <a  fragment="about" (click)="closeMenu()"
               ><h1
                 class="menu-link"
                 *ngIf="jsonContent.menu.about"
@@ -54,8 +54,8 @@
           {{ jsonContent.contact.greeting }}
         </h2>
       </div>
-      <div class="menu-footer">
-        <po-footer></po-footer>
+      <div class="menu-footer-wrapper">
+        <po-footer [isMenuFooter]="true"></po-footer>
       </div>
     </div>
   </section>

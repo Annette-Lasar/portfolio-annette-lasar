@@ -8,6 +8,9 @@ export interface Static {
     favicon: string;
     candidate_logo: string;
     candidate_name: string;
+    candidate_street: string;
+    candidate_town: string;
+    candidate_phone_number: string;
     ink_blot: string;
     email: string;
     arrows: string[];

@@ -169,3 +169,9 @@ svg {
     background-position: center 120px;
   }
 }
+
+@media (min-width: 50em) {
+  po-button {
+    display: none;
+  }
+}

@@ -27,20 +27,18 @@ import { of } from 'rxjs';
   styleUrls: ['./project.component.scss'],
 })
 export class ProjectComponent implements OnInit, AfterViewInit {
-  /* staticContent: Static | null = null;
+  staticContent: Static | null = null;
   staticContentProjects: { [key: string]: StaticProject } | null = null;
-  jsonContent: Translations | null = null; */
+  jsonContent: Translations | null = null;
 
   constructor(
-    /* private staticContentService: StaticContentService,
-    private translationService: TranslationService, */
-    @Inject(DOCUMENT) private document: Document,
+    private staticContentService: StaticContentService,
+    private translationService: TranslationService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
   ngOnInit(): void {
-    // AOS.init();
-    /* this.staticContentService
+    this.staticContentService
       .getStaticContent()
       .pipe(
         catchError((error) => {
@@ -52,11 +50,10 @@ export class ProjectComponent implements OnInit, AfterViewInit {
         if (data) {
           this.staticContent = data;
           this.staticContentProjects = data.portfolio.projects;
-          // AOS.refresh();
         }
-      }); */
+      });
 
-    /* this.translationService.translations$.subscribe(
+    this.translationService.translations$.subscribe(
       (data: Translations | null) => {
         this.jsonContent = data;
         AOS.refresh();
@@ -65,19 +62,22 @@ export class ProjectComponent implements OnInit, AfterViewInit {
 
     this.translationService
       .loadTranslations(this.translationService.getCurrentLanguage())
-      .subscribe(); */
+      .subscribe();
   }
-
 
   ngAfterViewInit(): void {
     console.log('Fertig geladen.');
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init(); // HIER INHALT AUS AOS.init GELÖSCHT.
+      AOS.init({
+        offset: 500,
+        duration: 1000,
+        delay: 100,
+      });
       console.log('AOS initialized.');
     }
   }
 
-/*   getProjectKeys(project: ProjectWrapper): string[] {
+  getProjectKeys(project: ProjectWrapper): string[] {
     return Object.keys(project);
-  } */
+  }
 }

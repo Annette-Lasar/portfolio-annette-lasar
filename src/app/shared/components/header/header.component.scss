@@ -10,6 +10,7 @@ section {
   align-items: center;
   justify-content: space-between;
   background-color: $background-color-light;
+  border: red 1px;
   .logo {
     height: 28px;
   }
@@ -50,20 +51,22 @@ img {
 }
 
 .custom-options {
+  width: 150px;
+  height: 40px;
   position: absolute;
-  top: 28px;
-  left: 0;
-  right: 8px;
+  top: -8px;
+  left: -156px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background: white;
-  z-index: 15;
 }
 
 .custom-option {
   display: flex;
   align-items: center;
-  padding: 8px 0;
+  padding: 8px 0.5em;
   cursor: pointer;
 }
 
@@ -73,7 +76,7 @@ img {
 
 .custom-option .flag {
   margin: 0 auto;
-  width: 24px;
+  width: 50px;
   height: auto;
 }
 
@@ -137,9 +140,13 @@ img {
 po-menu {
   height: calc(100vh - $header-height);
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: $header-height;
   left: 0;
   z-index: 10;
   background-color: $background-color-light;
+}
+
+.d-none {
+  display: none;
 }

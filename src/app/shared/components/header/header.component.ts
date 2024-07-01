@@ -6,8 +6,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuStateService } from '../../services/menu-state.service';
 import { TranslationService } from '../../services/translation.service';
 import { Translations } from '../../interfaces/translations.interface';
+import { ImprintTranslationService } from '../../services/imprint-translation.service';
+import { PrivacyPolicyTranslationService } from '../../services/privacy-policy-translation.service';
 import { LanguageOption } from '../../interfaces/language-option.interface';
 import { MenuComponent } from '../menu/menu.component';
+
+
 
 @Component({
   selector: 'po-header',
@@ -21,16 +25,18 @@ export class HeaderComponent implements OnInit {
   jsonContent: Translations | null = null;
   selectedLanguage = 'en';
   selectedFlag = 'assets/icons/flags/english_flag.svg';
-  dropdownOpen = false;
-  isActive = false;
-  menuActive = false;
+  dropdownOpen: boolean = false;
+  isActive: boolean = false;
+  menuActive: boolean = false;
 
   languageOptions: LanguageOption[] = [];
 
   constructor(
     private staticContentService: StaticContentService,
     private menuStateService: MenuStateService,
-    private translationService: TranslationService
+    private translationService: TranslationService,
+    private imprintTranslationService: ImprintTranslationService,
+    private privacyPolicyTranslationService: PrivacyPolicyTranslationService
   ) {}
 
   ngOnInit(): void {
@@ -114,6 +120,8 @@ export class HeaderComponent implements OnInit {
     this.selectedFlag = option.flag;
     this.dropdownOpen = false;
     this.translationService.loadTranslations(option.value).subscribe(() => {});
+    this.imprintTranslationService.loadTranslations(option.value).subscribe(() => {});
+    this.privacyPolicyTranslationService.loadTranslations(option.value).subscribe(() => {});
   }
 
   toggleBurgerButton() {

@@ -5,6 +5,9 @@
   "favicon": "assets/icons/logo_candiate_orange.svg",
   "candidate_logo": "assets/icons/logo_candidate_dark.svg",
   "candidate_name": "Annette Lasar",
+  "candidate_street": "Buchfeldstraße 19",
+  "candidate_town": "74632 Neuenstein",
+  "candidate_phone_number": "015170145561",
   "ink_blot": "assets/icons/ink_blot.svg",
   "email": "a_lasar@web.de",
   "arrows": [
@@ -12,7 +15,7 @@
     "assets/icons/arrows_dark/arrow_2.svg",
     "assets/icons/arrows_dark/arrow_3.svg"
   ],
-  "candidate_photo": "assets/icons/annette_square.jpg",
+  "candidate_photo": "assets/img/candidate.jpg",
   "candidate_skills": [
     {
       "icon_path": "assets/icons/skill_icons/angular.svg",
@@ -61,23 +64,23 @@
   ],
   "portfolio": {
     "title": "Portfolio",
-    "round_arrow": "assets/icons/arrows_dark/arrow_round.svg",
+    "round_arrow": "arrow_round.svg",
     "projects": {
       "join": {
         "title": "Join", 
-        "path": "assets/img/projects/join.png",
+        "path": "join.png",
         "skills": ["HTML", "CSS", "JavaScript"],
         "code_button": "Github"
       },
       "mermaid": {
         "title": "Mermaid", 
-        "path": "assets/img/projects/mermaid.png",
+        "path": "mermaid.png",
         "skills": ["HTML", "CSS", "JavaScript/ OOP"],
         "code_button": "Github"
       },
       "pokedex": {
         "title": "Pokédex", 
-        "path": "assets/img/projects/pokedex.png",
+        "path": "pokedex.png",
         "skills": ["HTML", "CSS", "JavaScript", "API"],
         "code_button": "Github"
       },

@@ -146,6 +146,13 @@
       }
       <label for="message">{{ jsonContent.contact.message }}</label>
     </div>
-    <input type="submit" value="{{ jsonContent.contact.button }}" />
+    <div class="privacy-policy-wrapper">
+      <input type="checkbox" name="" id="privacy_policy_check">
+      <a routerLink="privacy-policy">Datenschutzerklärung</a>
+    </div>
+    <div class="button-wrapper">
+      <input type="submit" value="{{ jsonContent.contact.button }}" />
+    </div>
+    
   </form>
 </section>
