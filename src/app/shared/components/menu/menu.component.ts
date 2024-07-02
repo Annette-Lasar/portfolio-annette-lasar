@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
 
 
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { FooterComponent } from '../footer/footer.component';
 import { MenuStateService } from '../../services/menu-state.service';
 import { Translations } from '../../interfaces/translations.interface';
@@ -46,22 +46,14 @@ export class MenuComponent implements OnInit {
   @Input() jsonContent: Translations | null = null;
   @Input() selectedLanguage: string = '';
 
-  constructor(private menuStateService: MenuStateService) {}
+  constructor(private menuStateService: MenuStateService,
+    private router: Router
+  ) {}
   ngOnInit(): void {}
 
-  navigateAndClose(sectionId: string) {
-    this.navigate(sectionId);
-    this.closeMenu();
-    console.log('navigateAndClose ausgeführt');
-  }
-
-  navigate(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    console.log('SectionId: ', element);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
+changeRoute() {
+  this.router.navigate(['/Annette Lasar', 'about']);
+}
 
   closeMenu() {
     this.menuStateService.setMenuVisibility(false);

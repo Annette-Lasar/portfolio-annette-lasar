@@ -23,7 +23,7 @@
         />
       </div>
     </div>
-    <div class="text-wrapper" data-aos="fade-down">
+    <div class="text-wrapper" [attr.data-aos]="isWindowLarge ? 'fade-left' : 'fade-down'" >
       <h5>{{ staticContentProjects[key].title }}</h5>
       <div class="skills">
         @for(skill of staticContentProjects[key].skills; track skill; let last =
