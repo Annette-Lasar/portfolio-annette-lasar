@@ -163,29 +163,29 @@ export class ProjectComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
-        offset: 500,
-        duration: 1000,
-        delay: 100,
+        offset: 200,
+        duration: 400,
+        delay: 200,
       });
     }
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    const windowWidth = window.innerWidth;
-    // console.log('Breite: ', windowWidth);
-    if (windowWidth >= 800) {
-      this.isWindowLarge = true;
-      console.log('breit? ', this.isWindowLarge);
-    } else {
-      this.isWindowLarge = false;
-      console.log('breit ', this.isWindowLarge);
-    }
+    this.updateWindowSize();
   }
 
   private updateWindowSize(): void {
     const windowWidth = window.innerWidth;
     this.isWindowLarge = windowWidth >= 800;
+  }
+
+  getDataAos(isOdd: boolean): string {
+    if (this.isWindowLarge) {
+      return isOdd ? 'fade-right' : 'fade-left';
+    } else {
+      return 'fade-down';
+    }
   }
 
   getProjectKeys(project: ProjectWrapper): string[] {

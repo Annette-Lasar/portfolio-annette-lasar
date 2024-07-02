@@ -1,4 +1,4 @@
-<article *ngIf="staticContent && jsonContent && staticContentProjects">
+<!-- <article *ngIf="staticContent && jsonContent && staticContentProjects">
   @for(project of jsonContent.portfolio.projects; track project; let i= $index;
   let count = $count) {
   <div
@@ -36,6 +36,61 @@
         {{ project[key].description }}
       </div>
       <div>
+        <po-button [caption]="project[key].test_button"></po-button>
+        <po-button
+          [caption]="staticContentProjects[key].code_button"
+        ></po-button>
+      </div>
+    </div>
+    }
+  </div>
+  } @empty { 'No projects available' }
+</article> -->
+
+<article *ngIf="staticContent && jsonContent && staticContentProjects">
+  @for(project of jsonContent.portfolio.projects; track project; let i= $index;
+  let count = $count) {
+
+  <div
+    [ngClass]="{ odd: (i + 1) % 2 !== 0, even: (i + 1) % 2 === 0 }"
+    class="project-wrapper"
+  >
+    <h3>{{ i + 1 }} / {{ count }}</h3>
+    @for(key of getProjectKeys(project); track key;) {
+    <div class="img-box">
+      <img
+        [src]="'assets/img/projects/' + staticContentProjects[key].path"
+        alt="{{ staticContent.portfolio.projects[key].title }}"
+        class="project-img"
+      />
+      <div class="frame-wrapper">
+        <div class="frame"></div>
+        <img
+          class="round-arrow"
+          [src]="
+            'assets/icons/arrows_dark/' + staticContent.portfolio.round_arrow
+          "
+        />
+      </div>
+    </div>
+    <div
+      class="text-wrapper"
+      [ngClass]="{ odd: (i + 1) % 2 !== 0, even: (i + 1) % 2 === 0 }"
+      [attr.data-aos]="getDataAos((i + 1) % 2 !== 0)"
+      data-aos-easing="ease-out"
+    >
+      <h5>{{ staticContentProjects[key].title }}</h5>
+      <div class="skills">
+        @for(skill of staticContentProjects[key].skills; track skill; let last =
+        $last){
+        {{ skill }}
+        <ng-container *ngIf="!last"> | </ng-container>
+        }
+      </div>
+      <div class="description">
+        {{ project[key].description }}
+      </div>
+      <div class="project-button-wrapper">
         <po-button [caption]="project[key].test_button"></po-button>
         <po-button
           [caption]="staticContentProjects[key].code_button"
