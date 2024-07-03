@@ -4,7 +4,7 @@
 
 html {
   scroll-behavior: smooth;
-  
+  scroll-padding-top: 80px;
 }
 
 *::-webkit-scrollbar {
@@ -24,7 +24,7 @@ html {
 body {
   background-color: $background-color-light;
   color: $font-color;
-  // scroll-padding-top: 80px;
+  // 
 }
 
 img {

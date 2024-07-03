@@ -129,6 +129,8 @@ input[type="submit"] {
   &:hover,
   &:not(disabled) {
     padding-inline: 2.5em;
-    font-weight: 700;
+    &:hover {
+      font-weight: 700;
+    }
   }
 }
