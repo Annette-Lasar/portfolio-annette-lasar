@@ -1,4 +1,13 @@
 
-po-about, po-skills, po-portfolio, po-contact {
+/* po-about, po-skills, po-portfolio, po-contact {
     scroll-padding-top: 80px;
+} */
+
+/* #container {
+    scroll-padding-top: 80px;
+    scroll-snap-type: y mandatory;
 }
+
+po-about, po-skills, po-portfolio, po-contact {
+    scroll-snap-align: start;
+} */
