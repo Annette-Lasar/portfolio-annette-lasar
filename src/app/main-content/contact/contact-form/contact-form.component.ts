@@ -18,14 +18,13 @@ import { ContactData } from '../../../shared/interfaces/contact-data.interface';
   styleUrl: './contact-form.component.scss',
 })
 export class ContactFormComponent implements OnInit {
-  fields: Array<{ type: string; id: keyof ContactData; placeholder: string }> =
-    [];
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
   name: string = '';
   email: string = '';
   message: string = '';
   mailTest = true;
+  checkboxState = false;
   contactData: ContactData = {
     name: '',
     email: '',

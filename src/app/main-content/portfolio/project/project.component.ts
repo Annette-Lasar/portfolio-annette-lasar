@@ -163,7 +163,7 @@ export class ProjectComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       AOS.init({
-        offset: 200,
+        offset: 300,
         duration: 400,
         delay: 200,
       });

@@ -110,6 +110,10 @@ input:hover, textarea:hover {
   color: $warning-color;
 }
 
+a {
+  color: $accent-color;
+}
+
 input[type="submit"] {
   width: fit-content;
   margin: 1em auto 0;
