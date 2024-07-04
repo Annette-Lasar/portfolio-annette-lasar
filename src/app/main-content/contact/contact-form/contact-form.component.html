@@ -81,13 +81,27 @@
       <label for="message">{{ jsonContent.contact.message }}</label>
     </div>
     <div class="privacy-policy-wrapper">
-      <input type="checkbox" name="privacy-policy" id="privacy_policy_check" [(ngModel)]="checkboxState" required>
-      <span>{{jsonContent.contact.confirmation_prefix }}</span>
-      <a routerLink="privacy-policy">{{jsonContent.contact.privacy_policy}}</a> {{checkboxState | json}}
-      <span> {{jsonContent.contact.confirmation_suffix}}</span>
+      <input
+        type="checkbox"
+        name="privacy-policy"
+        id="privacy_policy_check"
+        [(ngModel)]="checkboxState"
+        required
+      />
+      <div class="privacy-policy-textbox">
+        <span>{{ jsonContent.contact.confirmation_prefix }}</span>
+        <a routerLink="privacy-policy">{{
+          jsonContent.contact.privacy_policy
+        }}</a>
+        <span> {{ jsonContent.contact.confirmation_suffix }}</span>
+      </div>
     </div>
     <div class="button-wrapper">
-      <input [disabled]="!contactForm.form.valid || !checkboxState " type="submit" value="{{ jsonContent.contact.button }}" />
+      <input
+        [disabled]="!contactForm.form.valid || !checkboxState"
+        type="submit"
+        value="{{ jsonContent.contact.button }}"
+      />
     </div>
   </form>
 </section>

@@ -122,13 +122,12 @@
   </div>
 </section> -->
 
-
 <section *ngIf="jsonContent">
   <div class="wrapper">
     <nav>
       <ul>
         <li>
-          <a [routerLink]="['/']" fragment="about" (click)="closeMenu(); scrollToSectionWithOffset('about')"
+          <a href="#about" (click)="closeMenu()"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.about"
@@ -143,7 +142,7 @@
           >
         </li>
         <li>
-          <a [routerLink]="['/']" fragment="skills" (click)="closeMenu(); scrollToSectionWithOffset('skills')"
+          <a href="#skills" (click)="closeMenu()"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.skills"
@@ -158,7 +157,7 @@
           >
         </li>
         <li>
-          <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu(); scrollToSectionWithOffset('portfolio')"
+          <a href="#portfolio" (click)="closeMenu()"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.portfolio"

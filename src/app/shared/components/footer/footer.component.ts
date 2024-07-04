@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { StaticContentService } from '../../services/static-content.service';
 import { Static } from '../../interfaces/static-content.interface';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,7 +11,7 @@ import { Translations } from '../../interfaces/translations.interface';
 @Component({
   selector: 'po-footer',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, RouterModule, RouterLink, HttpClientModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })

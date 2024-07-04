@@ -1,43 +1,24 @@
 @import "../../../../scss-styles/variables.scss";
 
-.project-wrapper {
+article {
   margin: 0 0 2em;
+}
+
+.project-wrapper {
+  border: red 1px solid;
   .img-box {
     width: 90%;
+    aspect-ratio: 16 / 9;
     margin: 1em auto;
     max-width: 400px;
     position: relative;
-    border: green 1px solid;
-    .frame-wrapper {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      &:hover {
-        opacity: 1;
-      }
-      &:hover .round-arrow {
-        animation: spinRoundArrow 0.5s ease-in-out forwards;
-      }
-      &:hover .project-img {
-        filter: grayscale(0%);
-        border: red 1px solid;
-      }
-      .frame {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        border: $background-color-dark 1.5px solid;
-      }
-      .round-arrow {
-        height: 40px;
-        position: absolute;
-        transform: translateY(-50%);
-      }
+    .project-img {
+      aspect-ratio: 16 / 9;
+    }
+    .round-arrow {
+      display: none;
     }
   }
-}
-
-.project-img {
-  filter: grayscale(100%);
 }
 
 .odd {
@@ -79,10 +60,6 @@ h3 {
   max-width: 400px;
 }
 
-h3 {
-  border: blue 1px solid;
-}
-
 .skills {
   margin: 0.25em 0 0.5em;
   display: flex;
@@ -94,38 +71,46 @@ h3 {
   font-size: 0.9rem;
 }
 
-@keyframes spinRoundArrow {
-  0% {
-    transform: scale(1) translateY(-50%) rotate(0deg);
-  }
-
-  100% {
-    transform: scale(1.2) translateY(-50%) rotate(250deg);
-  }
-}
-
-/* @media (min-width: 50em) {
-  .project-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .project-wrapper.even {
-    flex-direction: row-reverse;
-  }
-
-  .project-button-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-  }
-
-} */
-
 @media (min-width: 50em) {
   .project-wrapper {
     margin: 0 0 36px;
+  }
+
+  .img-box {
+    position: relative;
+    align-self: center;
+    .project-img {
+      filter: grayscale(100%);
+    }
+    .frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      border: $background-color-dark 1.5px solid;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .round-arrow {
+      height: 40px;
+      position: absolute;
+      transform: translateY(-50%);
+      transition: opacity 0.3s ease;
+      display: block !important;
+      opacity: 0;
+    }
+
+    &:hover img {
+      filter: grayscale(0);
+    }
+    &:hover .frame {
+      opacity: 1;
+    }
+    &:hover .round-arrow {
+      opacity: 1;
+      animation: spinRoundArrow 0.5s ease-in-out forwards;
+    }
   }
 
   .project-wrapper.odd {
@@ -170,5 +155,15 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+
+  @keyframes spinRoundArrow {
+    0% {
+      transform: scale(1) translateY(-50%) rotate(0deg);
+    }
+
+    100% {
+      transform: scale(1.2) translateY(-50%) rotate(250deg);
+    }
   }
 }
