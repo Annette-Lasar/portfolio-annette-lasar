@@ -128,7 +128,7 @@
     <nav>
       <ul>
         <li>
-          <a [routerLink]="['/']" fragment="about" (click)="closeMenu()"
+          <a [routerLink]="['/']" fragment="about" (click)="closeMenu(); scrollToSectionWithOffset('about')"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.about"
@@ -143,7 +143,7 @@
           >
         </li>
         <li>
-          <a [routerLink]="['/']" fragment="skills" (click)="closeMenu()"
+          <a [routerLink]="['/']" fragment="skills" (click)="closeMenu(); scrollToSectionWithOffset('skills')"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.skills"
@@ -158,7 +158,7 @@
           >
         </li>
         <li>
-          <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()"
+          <a [routerLink]="['/']" fragment="portfolio" (click)="closeMenu(); scrollToSectionWithOffset('portfolio')"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.portfolio"

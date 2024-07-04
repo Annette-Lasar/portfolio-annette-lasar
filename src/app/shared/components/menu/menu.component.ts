@@ -43,7 +43,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { MenuStateService } from '../../services/menu-state.service';
 import { Translations } from '../../interfaces/translations.interface';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs';
 
 @Component({
@@ -56,31 +56,27 @@ import { filter } from 'rxjs';
 export class MenuComponent implements OnInit, AfterViewInit {
   @Input() jsonContent: Translations | null = null;
   @Input() selectedLanguage: string = '';
-
   @ViewChild('container') container!: ElementRef<HTMLElement>;
 
   constructor(
     private menuStateService: MenuStateService,
     private router: Router,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private viewportScroller: ViewportScroller
   ) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    // Überwache NavigationEnd-Ereignisse
     this.router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         this.scrollToFragment();
       });
-
-    // Direktaufruf der Methode, um beim ersten Laden der Seite zu scrollen
     this.scrollToFragment();
   }
 
   scrollToFragment(): void {
-    // Sicherstellen, dass die container-Referenz initialisiert ist
     if (this.container) {
       const fragment = this.activeRoute.snapshot.fragment;
       if (fragment) {
@@ -96,5 +92,12 @@ export class MenuComponent implements OnInit, AfterViewInit {
 
   closeMenu() {
     this.menuStateService.setMenuVisibility(false);
+  }
+
+  scrollToSectionWithOffset(anchor: string) {
+    this.viewportScroller.scrollToAnchor(anchor);
+    setTimeout(() => {
+      window.scrollBy(0, -80); // Offset von 80px
+    }, 0);
   }
 }
