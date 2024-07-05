@@ -9,7 +9,6 @@ import { TranslationService } from '../../../shared/services/translation.service
 import { Translations } from '../../../shared/interfaces/translations.interface';
 import { ContactData } from '../../../shared/interfaces/contact-data.interface';
 
-
 @Component({
   selector: 'po-contact-form',
   standalone: true,
@@ -23,8 +22,9 @@ export class ContactFormComponent implements OnInit {
   name: string = '';
   email: string = '';
   message: string = '';
-  mailTest = true;
-  checkboxState = false;
+  mailTest: boolean = true;
+  checkboxState: boolean = false;
+  showSuccessMessage: boolean = false;
   contactData: ContactData = {
     name: '',
     email: '',
@@ -99,7 +99,15 @@ export class ContactFormComponent implements OnInit {
         });
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       // hier gleichen Content wie oben eintragen
+      this.showSuccessMessage = true;
       ngForm.resetForm();
+      this.removeSuccessMessage();
     }
+  }
+
+  removeSuccessMessage() {
+    setTimeout(() => {
+      this.showSuccessMessage = false;
+    }, 3000);
   }
 }

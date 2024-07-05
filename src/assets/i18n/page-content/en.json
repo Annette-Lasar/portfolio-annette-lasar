@@ -60,6 +60,7 @@
     "enter_name": "Please enter your name!",
     "enter_email": "Please enter your e-mail address!",
     "enter_message": "Please enter a message!",
+    "accept_privacy_policy": "Please accept the privacy policy!",
     "success": "Your message has been successfully transmitted."
   },
   "footer": {

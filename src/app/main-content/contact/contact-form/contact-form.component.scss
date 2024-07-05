@@ -9,6 +9,7 @@ section {
 form {
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
   font-family: $text-font-family;
 }
 
@@ -116,7 +117,7 @@ a {
 }
 
 .privacy-policy-wrapper {
-  margin: 0.5em 0 2em;
+  margin: 0.5em 0 0;
   display: flex;
   gap: 8px;
   line-height: 1.5;
@@ -125,23 +126,50 @@ a {
   }
 }
 
-input[type="submit"] {
-  width: fit-content;
-  margin: 1em auto 0;
-  padding: 1em 2em;
-  display: block;
+.success-message {
+  width: 100%;
+  padding: 2em;
+  position: absolute;
+  top: 50%;
+  right: -100%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: $success-color;
   background-color: $background-color-dark;
-  color: $font-color-light;
-  border: $background-color-light 4px solid;
-  cursor: pointer;
-  &:disabled {
-    opacity: 0.3;
-  }
-  &:hover,
-  &:not(disabled) {
-    padding-inline: 2.5em;
-    &:hover {
+  animation: showSuccessMessage 1.5s forwards;
+}
+
+.button-wrapper {
+  margin: 96px 0 0;
+  input[type="submit"] {
+    width: fit-content;
+    margin: 1em auto 0;
+    padding: 1em 2em;
+    display: block;
+    background-color: $background-color-dark;
+    color: $font-color-light;
+    border: $background-color-light 4px solid;
+    cursor: pointer;
+    &:disabled {
+      opacity: 0.3;
+    }
+    &:hover,
+    &:not(disabled) {
+      padding-inline: 2.5em;
       font-weight: 700;
     }
+  }
+}
+
+@keyframes showSuccessMessage {
+  from {
+    opacity: 0;
+    right: -100%;
+  }
+
+  to {
+    opacity: 1;
+    right: 50%;
+    transform: translateX(50%);
   }
 }

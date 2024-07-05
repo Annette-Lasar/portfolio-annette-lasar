@@ -1,20 +1,42 @@
 <section *ngIf="staticContent && imprintJsonContent">
   <div class="wrapper">
-    <button><a routerLink="/">{{imprintJsonContent.back_button}}</a></button>
-    <h1>{{imprintJsonContent.imprint}}</h1>
-    <h2 [innerHTML]="insertSoftHyphens(imprintJsonContent.provider)"></h2>
+    <div class="title-wrapper">
+      <button>
+        <a routerLink="/">{{ imprintJsonContent.back_button }}</a>
+      </button>
+      <h1
+        [ngClass]="{
+          english: isCurrentLanguage('en'),
+          german: isCurrentLanguage('de'),
+          french: isCurrentLanguage('fr')
+        }"
+      >
+        {{ imprintJsonContent.imprint }}
+      </h1>
+    </div>
+
+    <h2
+      [ngClass]="{
+        english: isCurrentLanguage('en'),
+        german: isCurrentLanguage('de'),
+        french: isCurrentLanguage('fr')
+      }"
+      [innerHTML]="insertSoftHyphens(imprintJsonContent.provider)"
+    ></h2>
     <p>{{ staticContent.candidate_name }}</p>
     <p>{{ staticContent.candidate_street }}</p>
     <p>{{ staticContent.candidate_town }}</p>
-    <p>{{imprintJsonContent.candidate_country}}</p>
+    <p>{{ imprintJsonContent.candidate_country }}</p>
 
-    <h2 [innerHTML]="insertSoftHyphens(imprintJsonContent.contact_options)"></h2>
+    <h2
+      [innerHTML]="insertSoftHyphens(imprintJsonContent.contact_options)"
+    ></h2>
     <p>
-      <span>{{imprintJsonContent.email_address}}: </span>
-      <a href="mailto:{{staticContent.email}}">{{ staticContent.email }}</a>
+      <span>{{ imprintJsonContent.email_address }}: </span>
+      <a href="mailto:{{ staticContent.email }}">{{ staticContent.email }}</a>
     </p>
     <p>
-      <span>{{imprintJsonContent.phone}}: </span>
+      <span>{{ imprintJsonContent.phone }}: </span>
       <span>{{ staticContent.candidate_phone_number }}</span>
     </p>
 
@@ -24,7 +46,7 @@
         title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
         target="_blank"
         rel="noopener noreferrer nofollow"
-        >{{imprintJsonContent.creation_reference}}</a
+        >{{ imprintJsonContent.creation_reference }}</a
       >
     </p>
   </div>

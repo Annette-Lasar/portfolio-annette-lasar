@@ -95,9 +95,13 @@
         {{ project[key].description }}
       </div>
       <div class="project-button-wrapper">
-        <po-button [caption]="project[key].test_button"></po-button>
+        <po-button
+          [caption]="project[key].test_button"
+          [additionalClass]="'project-button'"
+        ></po-button>
         <po-button
           [caption]="staticContentProjects[key].code_button"
+          [additionalClass]="'project-button'"
         ></po-button>
       </div>
     </div>

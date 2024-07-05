@@ -2,11 +2,11 @@
 
 section {
   margin: 0 0 -1px;
-  padding: 8em 1em 1em;
+  padding: 8em 1em 96px;
   overflow: hidden;
   background-color: $background-color-dark;
   color: $background-color-light;
-    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0% 100%);
 }
 
 .greeting {
@@ -23,7 +23,14 @@ h3 {
 }
 
 .request-to-contact {
-  margin: 0 0 1em;
+  margin: 0 0 2em;
   text-align: center;
   font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+
+@media (min-width: 50em) {
+  section {
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+  }
 }

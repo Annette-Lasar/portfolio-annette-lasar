@@ -86,22 +86,31 @@
         name="privacy-policy"
         id="privacy_policy_check"
         [(ngModel)]="checkboxState"
+        #privacyPolicyCheckbox="ngModel"
         required
       />
-      <div class="privacy-policy-textbox">
+      <label for="privacy_policy_check" class="privacy-policy-textbox">
         <span>{{ jsonContent.contact.confirmation_prefix }}</span>
         <a routerLink="privacy-policy">{{
           jsonContent.contact.privacy_policy
         }}</a>
         <span> {{ jsonContent.contact.confirmation_suffix }}</span>
-      </div>
+      </label>
     </div>
+    @if(!privacyPolicyCheckbox.valid && privacyPolicyCheckbox.touched) {
+    <div class="validation-message">
+      {{ jsonContent.contact.accept_privacy_policy }}
+    </div>
+    }
     <div class="button-wrapper">
       <input
         [disabled]="!contactForm.form.valid || !checkboxState"
         type="submit"
         value="{{ jsonContent.contact.button }}"
       />
+    </div>
+    <div class="success-message" [class.d-none]="!showSuccessMessage">
+      {{ jsonContent.contact.success }}
     </div>
   </form>
 </section>

@@ -60,6 +60,7 @@
     "enter_name": "Veuillez saisir votre nom!",
     "enter_email": "Veuillez saisir votre adresse e-mail!",
     "enter_message": "Veuillez saisir un message!",
+    "accept_privacy_policy": "S'il vous plaît, acceptez la politique de confidentialité!",
     "success": "Votre message a été transmis avec succès."
   },
   "footer": {

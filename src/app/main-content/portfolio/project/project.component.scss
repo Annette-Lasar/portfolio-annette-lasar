@@ -1,11 +1,11 @@
 @import "../../../../scss-styles/variables.scss";
 
 article {
-  margin: 0 0 2em;
+  margin: 0 0 36px;
 }
 
 .project-wrapper {
-  border: red 1px solid;
+  margin: 0 0 64px;
   .img-box {
     width: 90%;
     aspect-ratio: 16 / 9;
@@ -69,6 +69,15 @@ h3 {
 
 .description {
   font-size: 0.9rem;
+}
+
+.project-button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  po-button {
+    padding: 0.3em 0.75em;
+  }
 }
 
 @media (min-width: 50em) {

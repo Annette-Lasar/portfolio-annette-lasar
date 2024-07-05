@@ -12,5 +12,6 @@ export interface ContactToTranslate {
     enter_name: string;
     enter_email: string;
     enter_message: string;
+    accept_privacy_policy: string;
     success: string;
 }

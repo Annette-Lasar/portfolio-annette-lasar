@@ -1,3 +1,16 @@
 a {
-    margin: 1em auto;
+  margin: 1em auto;
+}
+
+.project-button {
+  padding: 0.4em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 37.5em) {
+  .project-button {
+    padding: 1em 2em;
+  }
 }

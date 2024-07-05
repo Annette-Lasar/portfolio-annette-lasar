@@ -1,19 +1,99 @@
 @import "../../scss-styles/variables.scss";
 
 section {
-    min-height: calc(100vh - $header-height - $footer-height-small);
-    min-height: calc(100dvh - $header-height - $footer-height-small);
-    padding: 1em;
+  min-height: calc(100vh - $header-height - $footer-height-small);
+  min-height: calc(100dvh - $header-height - $footer-height-small);
+  padding: 1em;
 }
 
 .wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-@media (min-width: 50em) {
-    section {
-        min-height: calc(100vh - $header-height - $footer-height-large);
-        min-height: calc(100dvh - $header-height - $footer-height-large);
+button {
+  margin: 0 auto 1.5em;
+  padding: 0;
+  display: block;
+  border: none;
+  background-color: $background-color-light;
+  cursor: pointer;
+  a {
+    margin: 0;
+    width: fit-content;
+    height: 50px;
+    padding: 0.3em 3em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: $font-color;
+    box-shadow: 2px 2px 2px $shadow-color;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: transparent 4px solid;
     }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border: transparent 4px solid;
+    }
+    &:hover::before {
+      animation: border-top-right 0.75s linear forwards;
+    }
+    &:hover::after {
+      animation: border-left-bottom 0.75s linear forwards;
+    }
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+h1 {
+  margin: 1em 0;
+  &.english {
+    font-size: clamp(1.7rem, 7.5vw, 3rem);
+  }
+
+  &.german {
+    font-size: clamp(1.7rem, 7.5vw, 3rem);
+  }
+
+  &.french {
+    font-size: clamp(1.7rem, 7.5vw, 3rem);
+  }
+}
+
+h2 {
+    margin: 1em 0;
+    &.english {
+      font-size: clamp(1.3rem, 6vw, 2.6rem);
+    }
+  
+    &.german {
+      font-size: clamp(1.3rem, 6vw, 2.6rem);
+    }
+  
+    &.french {
+      font-size: clamp(1.3rem, 6vw, 2.6rem);
+    }
+  }
+
+@media (min-width: 50em) {
+  section {
+    min-height: calc(100vh - $header-height - $footer-height-large);
+    min-height: calc(100dvh - $header-height - $footer-height-large);
+  }
 }

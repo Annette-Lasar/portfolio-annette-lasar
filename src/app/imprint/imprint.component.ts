@@ -43,6 +43,10 @@ export class ImprintComponent implements OnInit {
       .subscribe();
   }
 
+  isCurrentLanguage(lang: string): boolean {
+    return this.imprintTranslationService.getCurrentLanguage() === lang;
+  }
+
   insertSoftHyphens(word: string): string {
     return this.hyphenationRules[word] || word;
   }
