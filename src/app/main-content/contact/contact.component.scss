@@ -1,12 +1,13 @@
-@import '../../../scss-styles/variables.scss';
+@import "../../../scss-styles/variables.scss";
 
 section {
   margin: 0 0 -1px;
   padding: 8em 1em 96px;
+  position: relative;
   overflow: hidden;
   background-color: $background-color-dark;
   color: $background-color-light;
-    clip-path: polygon(0 0, 100% 12%, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 100% 12%, 100% 100%, 0% 100%);
 }
 
 .greeting {
@@ -28,6 +29,115 @@ h3 {
   font-size: clamp(0.9rem, 2vw, 1.2rem);
 }
 
+.arrow {
+  width: 60px;
+  height: 100px;
+  position: absolute;
+  right: 24px;
+  bottom: 48px;
+  background-image: url("/assets/icons/arrows_light/arrow_light_up.svg");
+  background-repeat: no-repeat;
+  background-position: center 80px;
+  animation: moveArrowUp 1.5s infinite;
+}
+
+@keyframes moveArrowUp {
+  0% {
+    background-position: center 80px;
+  }
+
+  4% {
+    background-position: center 70px;
+  }
+
+  8% {
+    background-position: center 60px;
+  }
+
+  12% {
+    background-position: center 50px;
+  }
+
+  16% {
+    background-position: center 40px;
+  }
+
+  20% {
+    background-position: center 30px;
+  }
+
+  24% {
+    background-position: center 20px;
+  }
+
+  28% {
+    background-position: center 10px;
+  }
+
+  32% {
+    background-position: center 0px;
+  }
+
+  36% {
+    background-position: center -10px;
+  }
+
+  40% {
+    background-position: center -20px;
+  }
+
+  44% {
+    background-position: center -30px;
+  }
+
+  48% {
+    background-position: center -40px;
+  }
+
+  52% {
+    background-position: center -50px;
+  }
+
+  56% {
+    background-position: center -60px;
+  }
+
+  60% {
+    background-position: center -70px;
+  }
+
+  64% {
+    background-position: center -80px;
+  }
+
+  68% {
+    background-position: center -90px;
+  }
+
+  72% {
+    background-position: center -100px;
+  }
+
+  75% {
+    background-position: center -100px;
+  }
+
+  80% {
+    background-position: center -110px;
+  }
+
+  85% {
+    background-position: center -110px;
+  }
+
+  95% {
+    background-position: center -120px;
+  }
+
+  100% {
+    background-position: center -120px;
+  }
+}
 
 @media (min-width: 50em) {
   section {

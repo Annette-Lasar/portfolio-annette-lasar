@@ -37,12 +37,6 @@
           "description": "Diese App basiert auf der PokéAPI, einer einfachen Bibliothek, und liefert und katalogisiert Informationen über Pokémons.",
           "test_button": "Ausprobieren"
         }
-      },
-      {
-        "da_bubble": {
-          "description": "Eine Messaging-App, die es Nutzern ermöglicht Kanäle zu erstellen und in Echtzeit zu kommunizieren.",
-          "test_button": "Ausprobieren"
-        }
       }
     ]
   },

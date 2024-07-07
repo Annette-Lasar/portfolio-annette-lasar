@@ -1,133 +1,9 @@
-<!-- <section *ngIf="jsonContent">
-  <div class="wrapper">
-    <nav>
-      <ul>
-        <li>
-          <a href="#about" fragment="about" (click)="closeMenu()"
-            ><h1
-              class="menu-link"
-              *ngIf="jsonContent.menu.about"
-              [ngClass]="{
-                english: selectedLanguage === 'en',
-                german: selectedLanguage === 'de',
-                french: selectedLanguage === 'fr'
-              }"
-            >
-              {{ jsonContent.menu.about }}
-            </h1></a
-          >
-        </li>
-        <li>
-          <a href="#skills" fragment="skills" (click)="closeMenu()"
-            ><h1
-              class="menu-link"
-              *ngIf="jsonContent.menu.skills"
-              [ngClass]="{
-                english: selectedLanguage === 'en',
-                german: selectedLanguage === 'de',
-                french: selectedLanguage === 'fr'
-              }"
-            >
-              {{ jsonContent.menu.skills }}
-            </h1></a
-          >
-        </li>
-        <li>
-          <a href="#portfolio" fragment="portfolio" (click)="closeMenu()"
-            ><h1
-              class="menu-link"
-              *ngIf="jsonContent.menu.portfolio"
-              [ngClass]="{
-                english: selectedLanguage === 'en',
-                german: selectedLanguage === 'de',
-                french: selectedLanguage === 'fr'
-              }"
-            >
-              {{ jsonContent.menu.portfolio }}
-            </h1></a
-          >
-        </li>
-      </ul>
-    </nav>
-    <div class="menu-bottom">
-      <h2 class="menu-header" *ngIf="jsonContent.contact.greeting">
-        {{ jsonContent.contact.greeting }}
-      </h2>
-    </div>
-    <div class="menu-footer-wrapper">
-      <po-footer [isMenuFooter]="true"></po-footer>
-    </div>
-  </div>
-</section> -->
-
-<!-- <section *ngIf="jsonContent">
-  <div class="wrapper">
-    <nav>
-      <ul>
-        <li>
-          <a fragment="about" (click)="navigateAndClose('/', 'about')"
-            ><h1
-              class="menu-link"
-              *ngIf="jsonContent.menu.about"
-              [ngClass]="{
-                english: selectedLanguage === 'en',
-                german: selectedLanguage === 'de',
-                french: selectedLanguage === 'fr'
-              }"
-            >
-              {{ jsonContent.menu.about }}
-            </h1></a
-          >
-        </li>
-        <li>
-          <a fragment="skills" (click)="navigateAndClose('/', 'skills')"
-            ><h1
-              class="menu-link"
-              *ngIf="jsonContent.menu.skills"
-              [ngClass]="{
-                english: selectedLanguage === 'en',
-                german: selectedLanguage === 'de',
-                french: selectedLanguage === 'fr'
-              }"
-            >
-              {{ jsonContent.menu.skills }}
-            </h1></a
-          >
-        </li>
-        <li>
-          <a fragment="portfolio" (click)="navigateAndClose('/', 'portfolio')"
-            ><h1
-              class="menu-link"
-              *ngIf="jsonContent.menu.portfolio"
-              [ngClass]="{
-                english: selectedLanguage === 'en',
-                german: selectedLanguage === 'de',
-                french: selectedLanguage === 'fr'
-              }"
-            >
-              {{ jsonContent.menu.portfolio }}
-            </h1></a
-          >
-        </li>
-      </ul>
-    </nav>
-    <div class="menu-bottom">
-      <h2 class="menu-header" *ngIf="jsonContent.contact.greeting">
-        {{ jsonContent.contact.greeting }}
-      </h2>
-    </div>
-    <div class="menu-footer-wrapper">
-      <po-footer [isMenuFooter]="true"></po-footer>
-    </div>
-  </div>
-</section> -->
-
 <section *ngIf="jsonContent">
   <div class="wrapper">
     <nav>
       <ul>
         <li>
-          <a href="#about" (click)="closeMenu()"
+          <a routerLink="/" (click)="navigateAndClose('about')"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.about"
@@ -142,7 +18,7 @@
           >
         </li>
         <li>
-          <a href="#skills" (click)="closeMenu()"
+          <a routerLink="/" (click)="navigateAndClose('skills')"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.skills"
@@ -157,7 +33,7 @@
           >
         </li>
         <li>
-          <a href="#portfolio" (click)="closeMenu()"
+          <a routerLink="/" (click)="navigateAndClose('portfolio')"
             ><h1
               class="menu-link"
               *ngIf="jsonContent.menu.portfolio"

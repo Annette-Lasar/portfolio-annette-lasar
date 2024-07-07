@@ -1,2 +1,3 @@
-<a href="#{{linkTarget}}" class="{{additionalClass}}" *ngIf="caption">{{ caption }}</a>
+<a href="#{{linkTarget}}" class="{{additionalClass}}" (click)="navigateToPosition(scrollTarget)" *ngIf="caption">{{ caption }}</a>
+
 

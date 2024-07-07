@@ -1,6 +1,10 @@
-<section *ngIf="jsonContent">
+<section *ngIf="jsonContent && staticContent">
   <h2 class="greeting">{{ jsonContent.contact.greeting }}</h2>
   <h3>{{ jsonContent.contact.question }}</h3>
   <p class="request-to-contact">{{ jsonContent.contact.request_to_contact }}</p>
   <po-contact-form></po-contact-form>
+  <div class="arrow-box">
+    <a class="arrow" (click)="scrollToTop()"></a>
+  </div>
 </section>
+<div id="anchor_element"></div>

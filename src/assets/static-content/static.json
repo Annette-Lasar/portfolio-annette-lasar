@@ -9,12 +9,8 @@
   "candidate_town": "74632 Neuenstein",
   "candidate_phone_number": "015170145561",
   "ink_blot": "assets/icons/ink_blot.svg",
-  "email": "a_lasar@web.de",
-  "arrows": [
-    "assets/icons/arrows_dark/arrow_1.svg",
-    "assets/icons/arrows_dark/arrow_2.svg",
-    "assets/icons/arrows_dark/arrow_3.svg"
-  ],
+  "email": "info@annette-lasar.de",
+  "arrow_dark": "assets/icons/arrows_dark/arrow_dark_down.svg",
   "candidate_photo": "assets/img/candidate.jpg",
   "candidate_skills": [
     {
@@ -67,35 +63,26 @@
     "round_arrow": "arrow_round.svg",
     "projects": {
       "join": {
-        "title": "Join", 
+        "title": "Join",
         "path": "join.png",
         "skills": ["HTML", "CSS", "JavaScript"],
         "code_button": "Github"
       },
       "mermaid": {
-        "title": "Mermaid", 
+        "title": "Mermaid",
         "path": "mermaid.png",
         "skills": ["HTML", "CSS", "JavaScript/ OOP"],
         "code_button": "Github"
       },
       "pokedex": {
-        "title": "Pokédex", 
+        "title": "Pokédex",
         "path": "pokedex.png",
         "skills": ["HTML", "CSS", "JavaScript", "API"],
-        "code_button": "Github"
-      },
-      "da_bubble": {
-        "title": "DABubble", 
-        "path": "bubble.png",
-        "skills": ["HTML", "CSS", "TypeScript", "Angular", "Firebase"],
         "code_button": "Github"
       }
     }
   },
-  "arrow_up": [
-    "assets/icons/arrows_light/arrow_1.svg",
-    "assets/icons/arrows_light/arrow_2.svg"
-  ],
+  "arrow_light": "assets/icons/arrows_light/arrow_light_up.svg",
   "copyright": "&copy; Annette Lasar",
   "github_logo": "assets/icons/contact_logos/github.svg",
   "email_logo": "assets/icons/contact_logos/e_mail.svg",

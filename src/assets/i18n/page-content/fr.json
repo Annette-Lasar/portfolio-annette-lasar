@@ -37,12 +37,6 @@
           "description": "Basée sur l'API Poké, une bibliothèque simple qui fournit et catalogue des informations sur les Pokémons.",
           "test_button": "Essayez"
         }
-      },
-      {
-        "da_bubble": {
-          "description": "Une application de messagerie qui permet aux utilisateurs de créer des canaux et de communiquer en temps réel.",
-          "test_button": "Essayez"
-        }
       }
     ]
   },

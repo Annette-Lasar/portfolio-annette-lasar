@@ -65,6 +65,12 @@ a {
 
 .legal-box {
   grid-area: legal;
+  & a {
+    border-bottom: transparent 1.5px solid;
+    &:hover {
+      border-bottom: $accent-color 1.5px solid;
+    }
+  }
 }
 
 .menu-footer {
@@ -73,8 +79,7 @@ a {
     height: 100%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 32px;
-    grid-template-areas:
-      "candidate legal";
+    grid-template-areas: "candidate legal";
     align-content: end;
     align-items: flex-end;
   }
@@ -89,7 +94,6 @@ a {
       display: none;
     }
     .email {
-      
       display: unset;
     }
   }

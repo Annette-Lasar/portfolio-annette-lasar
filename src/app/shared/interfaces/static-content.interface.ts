@@ -13,11 +13,11 @@ export interface Static {
     candidate_phone_number: string;
     ink_blot: string;
     email: string;
-    arrows: string[];
+    arrow_dark: string;
     candidate_photo: string;
     candidate_skills: CandidateSkills[];
     portfolio: Portfolio;
-    arrow_up: string[];
+    arrow_light: string;
     copyright: string;
     github_logo: string;
     email_logo: string;

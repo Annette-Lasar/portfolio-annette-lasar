@@ -37,12 +37,6 @@
           "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
           "test_button": "Try it out"
         }
-      },
-      {
-        "da_bubble": {
-          "description": "A messaging app that enables users to create channels and to communicate in real time.",
-          "test_button": "Try it out"
-        }
       }
     ]
   },
