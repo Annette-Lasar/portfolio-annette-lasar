@@ -5,11 +5,12 @@ import { StaticContentService } from '../shared/services/static-content.service'
 import { Static } from '../shared/interfaces/static-content.interface';
 import { ImprintTranslationService } from '../shared/services/imprint-translation.service';
 import { ImprintToTranslate } from '../shared/interfaces/imprint-to-translate.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'po-imprint',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, RouterLink],
   templateUrl: './imprint.component.html',
   styleUrl: './imprint.component.scss',
 })

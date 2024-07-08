@@ -77,19 +77,49 @@ h1 {
 }
 
 h2 {
-    margin: 1em 0;
-    &.english {
-      font-size: clamp(1.3rem, 6vw, 2.6rem);
-    }
-  
-    &.german {
-      font-size: clamp(1.3rem, 6vw, 2.6rem);
-    }
-  
-    &.french {
-      font-size: clamp(1.3rem, 6vw, 2.6rem);
-    }
+  margin: 1em 0;
+  &.english {
+    font-size: clamp(1.3rem, 4vw, 2.6rem);
   }
+
+  &.german {
+    font-size: clamp(1.3rem, 4vw, 2.6rem);
+  }
+
+  &.french {
+    font-size: clamp(1.3rem, 4vw, 2.6rem);
+  }
+}
+
+p {
+  text-align: center;
+}
+
+.seal {
+  margin: 2em 0 0;
+}
+
+a {
+  color: $accent-color;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 37em) {
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0 auto;
+  }
+
+  button {
+    margin: 0;
+  }
+}
 
 @media (min-width: 50em) {
   section {

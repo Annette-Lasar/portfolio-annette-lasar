@@ -33,9 +33,10 @@
   </p>
   <p>
     <span>{{ privacyPolicyJsonContent.imprint }}: </span>
-    portfolio/annette-lasar/imprint.de
+    <a routerLink="/imprint">
+      {{ staticContent.imprint_link }}
+    </a>
   </p>
-
   <h2 id="mOverview">{{ privacyPolicyJsonContent.overview_of_processing }}</h2>
   <p>
     {{ privacyPolicyJsonContent.overview_processing_text }}

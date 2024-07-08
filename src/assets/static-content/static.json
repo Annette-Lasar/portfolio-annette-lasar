@@ -66,17 +66,23 @@
         "title": "Join",
         "path": "join.png",
         "skills": ["HTML", "CSS", "JavaScript"],
+        "github_url": "https://github.com/Annette-Lasar/JOIN",
+        "project_url": "https://join.annette-lasar.de/index.html",
         "code_button": "Github"
       },
       "mermaid": {
         "title": "Mermaid",
         "path": "mermaid.png",
         "skills": ["HTML", "CSS", "JavaScript/ OOP"],
+        "github_url": "https://github.com/Annette-Lasar/Mermaid",
+        "project_url": "https://mermaid.annette-lasar.de",
         "code_button": "Github"
       },
       "pokedex": {
         "title": "Pokédex",
         "path": "pokedex.png",
+        "github_url": "https://github.com/Annette-Lasar/Pokedex",
+        "project_url": "https://pokedex.annette-lasar.de",
         "skills": ["HTML", "CSS", "JavaScript", "API"],
         "code_button": "Github"
       }
@@ -88,5 +94,6 @@
   "email_logo": "assets/icons/contact_logos/e_mail.svg",
   "linkedin_logo": "assets/icons/contact_logos/linkedin.svg",
   "warning_icon": "assets/icons/user_interaction/warning_icon.svg",
-  "success_icon": "assets/icons/user_interaction/succes_icon.svg"
+  "success_icon": "assets/icons/user_interaction/succes_icon.svg",
+  "imprint_link": "https://annette-lasar.de/imprint"
 }

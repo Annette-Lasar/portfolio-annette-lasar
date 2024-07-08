@@ -1,29 +1,31 @@
 <section *ngIf="staticContent && jsonContent">
-    <div class="title-box">
-      <h1
-        *ngIf="jsonContent.hero.profession"
-        [ngClass]="{
-          english: isCurrentLanguage('en'),
-          german: isCurrentLanguage('de'),
-          french: isCurrentLanguage('fr')
-        }"
-      >
-        {{ jsonContent.hero.profession }}
-      </h1>
-      <div class="name-box">
-        <div class="deco-line"></div>
-        <h4 *ngIf="staticContent.candidate_name">
-          {{ staticContent.candidate_name }}
-        </h4>
-      </div>
+  <div class="title-box">
+    <h1
+      *ngIf="jsonContent.hero.profession"
+      [ngClass]="{
+        english: isCurrentLanguage('en'),
+        german: isCurrentLanguage('de'),
+        french: isCurrentLanguage('fr')
+      }"
+    >
+      {{ jsonContent.hero.profession }}
+    </h1>
+    <div class="name-box">
+      <div class="deco-line"></div>
+      <h4 *ngIf="staticContent.candidate_name">
+        {{ staticContent.candidate_name }}
+      </h4>
     </div>
-    <po-button [caption]="jsonContent.hero.button" [linkTarget]="'contact'"></po-button>
-    <div class="info-box">
-      <p *ngIf="staticContent.email" class="email">{{ staticContent.email }}</p>
-      <div class="arrow-box"></div>
-    </div>
-    <figure class="splatter" *ngIf="staticContent.ink_blot">
-      <img src="{{ staticContent.ink_blot }}" alt="" />
-    </figure>
-  </section>
-  
+  </div>
+  <po-button
+    [caption]="jsonContent.hero.button"
+    [linkTarget]="'#contact'"
+  ></po-button>
+  <div class="info-box">
+    <p *ngIf="staticContent.email" class="email">{{ staticContent.email }}</p>
+    <div class="arrow-box"></div>
+  </div>
+  <figure class="splatter" *ngIf="staticContent.ink_blot">
+    <img src="{{ staticContent.ink_blot }}" alt="" />
+  </figure>
+</section>

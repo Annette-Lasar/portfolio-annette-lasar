@@ -22,4 +22,7 @@ export interface Static {
     github_logo: string;
     email_logo: string;
     linkedin_logo: string;
+    warning_icon: string;
+    success_icon: string;
+    imprint_link: string;
 }

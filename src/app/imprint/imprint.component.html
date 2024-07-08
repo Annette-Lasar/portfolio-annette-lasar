@@ -29,6 +29,11 @@
     <p>{{ imprintJsonContent.candidate_country }}</p>
 
     <h2
+      [ngClass]="{
+        english: isCurrentLanguage('en'),
+        german: isCurrentLanguage('de'),
+        french: isCurrentLanguage('fr')
+      }"
       [innerHTML]="insertSoftHyphens(imprintJsonContent.contact_options)"
     ></h2>
     <p>

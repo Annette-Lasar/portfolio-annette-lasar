@@ -41,7 +41,7 @@ section {
     height: 36px;
   }
   img:hover {
-    transform: translateY(-8px);
+    transform: translateY(-4px);
   }
 }
 a {
@@ -111,10 +111,10 @@ a {
   .wrapper {
     height: $footer-height-large;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 40px 28px;
     grid-template-areas:
       "logo icons"
       "candidate legal";
+    row-gap: 4px;
     align-content: end;
     align-items: flex-end;
   }
