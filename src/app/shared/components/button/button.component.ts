@@ -60,7 +60,7 @@ export class ButtonComponent {
       });
     } */
 
-/*   scrollToPosition(elementPosition: number, headerOffset: number): void {
+  /*   scrollToPosition(elementPosition: number, headerOffset: number): void {
     const offsetPosition = elementPosition - headerOffset;
     console.log('Offset-Position: ', offsetPosition);
     window.scrollTo({
@@ -69,8 +69,9 @@ export class ButtonComponent {
     });
   } */
 
-
-    navigateToPosition() {
+  navigateToPosition() {
+    setTimeout(() => {
       this.scrollService.scrollTo(this.scrollTarget);
-    }
+    }, 1000);
+  }
 }

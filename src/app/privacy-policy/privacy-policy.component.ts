@@ -11,7 +11,13 @@ import { ButtonComponent } from '../shared/components/button/button.component';
 @Component({
   selector: 'po-privacy-policy',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule, RouterLink, ButtonComponent],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule,
+    RouterLink,
+    ButtonComponent,
+  ],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss',
 })

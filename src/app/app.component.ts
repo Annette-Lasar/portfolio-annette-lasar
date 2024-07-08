@@ -63,19 +63,21 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.scrollService.scrollToElement$.subscribe((elementId) => {
-      console.log('Anker-Element: ', this.anchorElement);
-      if (
-        this.anchorElement &&
-        this.anchorElement.nativeElement.id === elementId
-      ) {
-        console.log('gelesen');
-        this.renderer.setProperty(
-          this.anchorElement.nativeElement,
-          'scrollIntoView',
-          { behavior: 'smooth' }
-        );
-      }
-    });
+    setTimeout(() => {
+      this.scrollService.scrollToElement$.subscribe((elementId) => {
+        console.log('Anker-Element: ', this.anchorElement);
+        if (
+          this.anchorElement &&
+          this.anchorElement.nativeElement.id === elementId
+        ) {
+          console.log('gelesen');
+          this.renderer.setProperty(
+            this.anchorElement.nativeElement,
+            'scrollIntoView',
+            { behavior: 'smooth' }
+          );
+        }
+      });
+    }, 1000);
   }
 }

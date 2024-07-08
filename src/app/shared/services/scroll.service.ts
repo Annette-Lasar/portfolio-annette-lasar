@@ -10,6 +10,7 @@ export class ScrollService {
   scrollToElement$ = this.scrollToElementSubject.asObservable();
 
   scrollTo(elementId: string) {
+    console.log('Anker vom Service aus: ', elementId);
     this.scrollToElementSubject.next(elementId);
   }
 }
