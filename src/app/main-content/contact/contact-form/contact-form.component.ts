@@ -73,7 +73,7 @@ export class ContactFormComponent implements OnInit {
   }
 
   post = {
-    endPoint: 'https://deineDomain.de/sendMail.php',
+    endPoint: 'https://annette-lasar.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
