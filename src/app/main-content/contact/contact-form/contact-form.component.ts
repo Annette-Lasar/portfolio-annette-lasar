@@ -22,13 +22,13 @@ export class ContactFormComponent implements OnInit {
   name: string = '';
   email: string = '';
   message: string = '';
-  mailTest: boolean = true;
+  // mailTest: boolean = false;
   checkboxState: boolean = false;
   showSuccessMessage: boolean = false;
   contactData: ContactData = {
-    name: '',
-    email: '',
-    message: '',
+    name: this.name,
+    email: this.email,
+    message: this.message,
   };
 
   http = inject(HttpClient);
@@ -83,7 +83,7 @@ export class ContactFormComponent implements OnInit {
     },
   };
 
-  onSubmit(ngForm: NgForm) {
+  /*   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
@@ -101,6 +101,42 @@ export class ContactFormComponent implements OnInit {
       this.showSuccessMessage = true;
       ngForm.resetForm();
       this.removeSuccessMessage();
+    }
+  } */
+
+  /*     onSubmit(ngForm: NgForm) {
+      if (ngForm.submitted && ngForm.form.valid) {
+        this.http
+          .post(this.post.endPoint, this.post.body(this.contactData))
+          .subscribe({
+            next: (response) => {
+              this.showSuccessMessage = true;
+              ngForm.resetForm();
+              this.removeSuccessMessage();
+            },
+            error: (error) => {
+              console.error(error);
+            },
+            complete: () => console.info('send post complete'),
+          });
+      } 
+    } */
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid) {
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            this.showSuccessMessage = true;
+            ngForm.resetForm();
+            this.removeSuccessMessage();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
     }
   }
 
