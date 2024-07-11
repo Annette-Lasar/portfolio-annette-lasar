@@ -25,9 +25,23 @@ export class PrivacyPolicyComponent implements OnInit {
   staticContent: Static | null = null;
   privacyPolicyJsonContent: PrivacyPolicyToTranslate | null = null;
 
+  private hyphenationRules: { [key: string]: string } = {
+    Datenschutzerklärung: 'Daten&shy;schutz&shy;er&shy;klär&shy;ung',
+    Inhaltsübersicht: 'In&shy;halts&shy;über&shy;sicht',
+    Übersicht: 'Über&shy;sicht',
+    Verarbeitungen: 'Verarbei&shy;tungen',
+    Maßgebliche: 'Maß&shy;geb&shy;liche',
+    Rechtsgrundlagen: 'Rechts&shy;grund&shy;la&shy;gen',
+    Übermittlung: 'Über&shy;mittlung',
+    personenbezogenen: 'personen&shy;bezogenen',
+    Daten: 'Da&shy;ten',
+    Sicherheitsmaßnahmen: 'Sicher&shy;heits&shy;maß&shy;nah&shy;men',
+    Begriffsdefinitionen: 'Begriffs&shy;definitionen'
+  };
+
   constructor(
     private staticContentService: StaticContentService,
-    private privacyPolicyTranslationService: PrivacyPolicyTranslationService,
+    private privacyPolicyTranslationService: PrivacyPolicyTranslationService
   ) {}
 
   ngOnInit(): void {
@@ -47,4 +61,30 @@ export class PrivacyPolicyComponent implements OnInit {
       )
       .subscribe();
   }
+
+  navigateToPosition(target: string): void {
+    setTimeout(() => {
+      const element = document.getElementById(target);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        this.scrollToPosition(elementPosition, headerOffset);
+      }
+    }, 100);
+  }
+
+  scrollToPosition(elementPosition: number, headerOffset: number) {
+    const offsetPosition = elementPosition - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
+
+    insertSoftHyphens(text: string): string {
+      console.log('Text: ', text);
+      console.log('Einzelne Wörter: ', text.split(' ').map((oneWord) => this.hyphenationRules[oneWord] || oneWord).join(' '));
+      return text.split(' ').map(word => this.hyphenationRules[word] || word).join(' ');
+    }
 }

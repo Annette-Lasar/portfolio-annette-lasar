@@ -1,11 +1,13 @@
 <section *ngIf="staticContent && privacyPolicyJsonContent">
   <div class="title-wrapper">
-    <po-button
-      [caption]="privacyPolicyJsonContent.back_button"
-      [routerLinkTarget]="'/'"
-      [scrollTarget]="'anchor_element'"
-    ></po-button>
-    <h1>{{ privacyPolicyJsonContent.privacy_policy }}</h1>
+    <button class="back-button">
+      <a routerLink="/" (click)="navigateToPosition('anchor_element')">
+        {{ privacyPolicyJsonContent.back_button }}</a
+      >
+    </button>
+    <h1
+      [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.privacy_policy)"
+    ></h1>
   </div>
   <h2 id="m4158">{{ privacyPolicyJsonContent.preamble }}</h2>
   <p>
@@ -14,7 +16,9 @@
   <p>{{ privacyPolicyJsonContent.gender_info }}</p>
 
   <p>{{ privacyPolicyJsonContent.as_of }}</p>
-  <h2>{{ privacyPolicyJsonContent.table_of_content }}</h2>
+  <h2
+    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.table_of_content)"
+  ></h2>
   <ul class="index">
     @for(item of privacyPolicyJsonContent.table_of_content_list; track item) {
     <li>
@@ -61,9 +65,10 @@
     <li>{{ processingItem }}</li>
     }
   </ul>
-  <h2 id="m2427">
-    {{ privacyPolicyJsonContent.legal_basics }}
-  </h2>
+  <h2
+    id="m2427"
+    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.legal_basics)"
+  ></h2>
   <p>
     {{ privacyPolicyJsonContent.legal_basics_introduction }}
   </p>
@@ -79,9 +84,10 @@
     {{ privacyPolicyJsonContent.legal_basics_conclusion }}
   </p>
 
-  <h2 id="m27">
-    {{ privacyPolicyJsonContent.security_measures }}
-  </h2>
+  <h2
+    id="m27"
+    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.security_measures)"
+  ></h2>
   <p>
     {{ privacyPolicyJsonContent.security_measures_text_1 }}
   </p>
@@ -92,7 +98,10 @@
     {{ privacyPolicyJsonContent.security_measures_text_3 }}
   </p>
 
-  <h2 id="m25">{{ privacyPolicyJsonContent.delivery_of_data }}</h2>
+  <h2
+    id="m25"
+    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.delivery_of_data)"
+  ></h2>
   <p>
     {{ privacyPolicyJsonContent.delivery_of_data_text }}
   </p>
@@ -276,9 +285,10 @@
     {{ privacyPolicyJsonContent.changes_actualisation_text_2 }}
   </p>
 
-  <h2 id="m42">
-    {{ privacyPolicyJsonContent.definitions }}
-  </h2>
+  <h2
+    id="m42"
+    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.definitions)"
+  ></h2>
   <p>
     {{ privacyPolicyJsonContent.definitions_introduction }}
   </p>

@@ -3,7 +3,6 @@
 section {
   height: calc(100vh - $header-height);
   height: calc(100dvh - $header-height);
-  border: blue 2px solid;
 }
 
 menu-bottom,
@@ -15,7 +14,6 @@ nav {
   height: calc(100vh - $header-height - $menu-bottom-height - $menu-footer-height);
   display: flex;
   align-items: center;
-  border: orchid 2px solid;
   ul {
     height: 80%;
     max-height: 600px;

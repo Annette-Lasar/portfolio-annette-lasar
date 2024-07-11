@@ -4,21 +4,21 @@
 >
   <div class="wrapper">
     <div class="icons">
-      <a href="#">
+      <a href="{{staticContent.github_link}}" target="_blank">
         <img
           *ngIf="staticContent.github_logo"
           src="{{ staticContent.github_logo }}"
           alt=""
         />
       </a>
-      <a href="#">
+      <a href="mailto:{{staticContent.email}}">
         <img
           *ngIf="staticContent.email_logo"
           src="{{ staticContent.email_logo }}"
           alt=""
         />
       </a>
-      <a href="#">
+      <a href="{{staticContent.linkedin_link}}" target="_blank">
         <img
           *ngIf="staticContent.linkedin_logo"
           src="{{ staticContent.linkedin_logo }}"

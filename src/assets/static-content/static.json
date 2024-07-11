@@ -93,6 +93,8 @@
   "github_logo": "assets/icons/contact_logos/github.svg",
   "email_logo": "assets/icons/contact_logos/e_mail.svg",
   "linkedin_logo": "assets/icons/contact_logos/linkedin.svg",
+  "github_link": "https://github.com/Annette-Lasar",
+  "linkedin_link": "https://www.linkedin.com/feed/",
   "warning_icon": "assets/icons/user_interaction/warning_icon.svg",
   "success_icon": "assets/icons/user_interaction/succes_icon.svg",
   "imprint_link": "https://annette-lasar.de/imprint"
