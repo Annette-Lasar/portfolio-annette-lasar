@@ -161,6 +161,10 @@ a {
   }
 }
 
+.invisible {
+  opacity: 0;
+}
+
 @keyframes showSuccessMessage {
   from {
     opacity: 0;

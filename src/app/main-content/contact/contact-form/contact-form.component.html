@@ -16,17 +16,18 @@
           placeholder=" "
           id="name"
           required
-          [(ngModel)]="name"
+          [(ngModel)]="contactData.name"
           name="name"
           #inputName="ngModel"
         />
         <label [for]="name">{{ jsonContent.contact.name }}</label>
       </div>
-      @if (!inputName.valid && inputName.touched) {
-      <div class="validation-message">
-        {{ getErrorMessage("name") }}
+      <div
+        class="validation-message"
+        [ngClass]="{ invisible: changeVisibility(inputName) }"
+      >
+        {{ jsonContent.contact.enter_name }}
       </div>
-      }
     </div>
 
     <div class="field-holder">
@@ -41,44 +42,48 @@
           placeholder=" "
           id="email"
           required
-          [(ngModel)]="email"
+          [(ngModel)]="contactData.email"
           name="email"
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
           #inputEmail="ngModel"
         />
         <label [for]="email">{{ jsonContent.contact.email }}</label>
       </div>
-      @if (!inputEmail.valid && inputEmail.touched) {
-      <div class="validation-message">
-        {{ getErrorMessage("email") }}
+      <div
+        class="validation-message"
+        [ngClass]="{ invisible: changeVisibility(inputEmail) }"
+      >
+        {{ jsonContent.contact.enter_email }}
       </div>
-      }
     </div>
 
-    <div
-      class="field-holder"
-      [ngClass]="{
-        'input-icon': true,
-        valid: messageField.valid && messageField.touched,
-        invalid: !messageField.valid && messageField.touched
-      }"
-    >
-      <textarea
-        placeholder=" "
-        id="message"
-        rows="8"
-        required
-        [(ngModel)]="message"
-        name="message"
-        #messageField="ngModel"
-        minlength="4"
-      ></textarea>
-      @if (!messageField.valid && messageField.touched) {
-      <div class="validation-message">
+    <div class="field-holder">
+      <div
+        [ngClass]="{
+          'input-icon': true,
+          valid: messageField.valid && messageField.touched,
+          invalid: !messageField.valid && messageField.touched
+        }"
+      >
+        <textarea
+          placeholder=" "
+          id="message"
+          rows="8"
+          required
+          [(ngModel)]="contactData.message"
+          name="message"
+          #messageField="ngModel"
+          minlength="3"
+        ></textarea>
+
+        <label for="message">{{ jsonContent.contact.message }}</label>
+      </div>
+      <div
+        class="validation-message"
+        [ngClass]="{ invisible: changeVisibility(messageField) }"
+      >
         {{ jsonContent.contact.enter_message }}
       </div>
-      }
-      <label for="message">{{ jsonContent.contact.message }}</label>
     </div>
     <div class="privacy-policy-wrapper">
       <input

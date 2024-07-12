@@ -72,7 +72,7 @@
       },
       "mermaid": {
         "title": "Mermaid",
-        "path": "mermaid.png",
+        "path": "mermaid.jpg",
         "skills": ["HTML", "CSS", "JavaScript/ OOP"],
         "github_url": "https://github.com/Annette-Lasar/Mermaid",
         "project_url": "https://mermaid.annette-lasar.de",
@@ -80,7 +80,7 @@
       },
       "pokedex": {
         "title": "Pokédex",
-        "path": "pokedex.png",
+        "path": "pokedex.jpg",
         "github_url": "https://github.com/Annette-Lasar/Pokedex",
         "project_url": "https://pokedex.annette-lasar.de",
         "skills": ["HTML", "CSS", "JavaScript", "API"],

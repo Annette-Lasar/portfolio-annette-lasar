@@ -1,312 +1,319 @@
 <section *ngIf="staticContent && privacyPolicyJsonContent">
-  <div class="title-wrapper">
-    <button class="back-button">
-      <a routerLink="/" (click)="navigateToPosition('anchor_element')">
-        {{ privacyPolicyJsonContent.back_button }}</a
+  <div class="inner-wrapper">
+    <div class="title-wrapper">
+      <button class="back-button">
+        <a routerLink="/" (click)="navigateToPosition('anchor_element')">
+          {{ privacyPolicyJsonContent.back_button }}</a
+        >
+      </button>
+      <h1
+        [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.privacy_policy)"
+      ></h1>
+    </div>
+    <h2 id="m4158">{{ privacyPolicyJsonContent.preamble }}</h2>
+    <p>
+      {{ privacyPolicyJsonContent.preamble_text }}
+    </p>
+    <p>{{ privacyPolicyJsonContent.gender_info }}</p>
+
+    <p>{{ privacyPolicyJsonContent.as_of }}</p>
+    <h2
+      [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.table_of_content)"
+    ></h2>
+    <ul class="index">
+      @for(item of privacyPolicyJsonContent.table_of_content_list; track item) {
+      <li>
+        <a class="index-link" href="#{{ item }}">{{ item }}</a>
+      </li>
+      }
+    </ul>
+    <h2 id="m3">{{ privacyPolicyJsonContent.responsible_person }}</h2>
+    <p>
+      {{ staticContent.candidate_name }}<br />{{ staticContent.candidate_street
+      }}<br />{{ staticContent.candidate_town }}
+    </p>
+    <p>
+      <span>{{ privacyPolicyJsonContent.email_address }}: </span>
+      <a href="mailto:{{ staticContent.email }}">{{ staticContent.email }}</a>
+    </p>
+    <p>
+      <span>{{ privacyPolicyJsonContent.imprint }}: </span>
+      <a routerLink="/imprint">
+        {{ staticContent.imprint_link }}
+      </a>
+    </p>
+    <h2 id="mOverview">
+      {{ privacyPolicyJsonContent.overview_of_processing }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.overview_processing_text }}
+    </p>
+    <h3>{{ privacyPolicyJsonContent.kinds_of_data_title }}</h3>
+    <ul>
+      @for(dataItem of privacyPolicyJsonContent.kinds_of_data; track dataItem) {
+      <li>{{ dataItem }}</li>
+      }
+    </ul>
+    <h3>{{ privacyPolicyJsonContent.categories_of_people_title }}</h3>
+    <ul>
+      @for(categoryItem of privacyPolicyJsonContent.categories_of_people; track
+      categoryItem) {
+      <li>{{ categoryItem }}</li>
+      }
+    </ul>
+    <h3>{{ privacyPolicyJsonContent.intentions_of_processing_title }}</h3>
+    <ul>
+      @for(processingItem of privacyPolicyJsonContent.intentions_of_processing;
+      track processingItem) {
+      <li>{{ processingItem }}</li>
+      }
+    </ul>
+    <h2
+      id="m2427"
+      [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.legal_basics)"
+    ></h2>
+    <p>
+      {{ privacyPolicyJsonContent.legal_basics_introduction }}
+    </p>
+    <ul>
+      @for(legalBasicItem of privacyPolicyJsonContent.legal_basics_items; track
+      legalBasicItem) {
+      <li>
+        {{ legalBasicItem }}
+      </li>
+      }
+    </ul>
+    <p>
+      {{ privacyPolicyJsonContent.legal_basics_conclusion }}
+    </p>
+
+    <h2
+      id="m27"
+      [innerHTML]="
+        insertSoftHyphens(privacyPolicyJsonContent.security_measures)
+      "
+    ></h2>
+    <p>
+      {{ privacyPolicyJsonContent.security_measures_text_1 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.security_measures_text_2 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.security_measures_text_3 }}
+    </p>
+
+    <h2
+      id="m25"
+      [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.delivery_of_data)"
+    ></h2>
+    <p>
+      {{ privacyPolicyJsonContent.delivery_of_data_text }}
+    </p>
+
+    <h2 id="m24">
+      {{ privacyPolicyJsonContent.international_data_transfer }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.international_data_transfer_text_1 }}
+      <a
+        href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en?prefLang=de"
+        target="_blank"
+        >https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en?prefLang=de.</a
       >
-    </button>
-    <h1
-      [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.privacy_policy)"
-    ></h1>
+    </p>
+    <p>
+      <span>
+        {{ privacyPolicyJsonContent.international_data_transfer_text_2 }}
+      </span>
+      <a href="https://www.dataprivacyframework.gov/" target="_blank"
+        >https://www.dataprivacyframework.gov/</a
+      >
+      <span>
+        {{ privacyPolicyJsonContent.international_data_transfer_text_3 }}
+      </span>
+    </p>
+
+    <h2 id="m12">
+      {{ privacyPolicyJsonContent.info_data_storage }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.info_data_storage_text_1 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.info_data_storage_text_2 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.info_data_storage_text_3 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.info_data_storage_text_4 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.info_data_storage_text_5 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.info_data_storage_text_6 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.further_advice }}
+    </p>
+    <ul class="m-elements">
+      <li>
+        {{ privacyPolicyJsonContent.info_data_storage_text_8 }}
+        <ul>
+          @for(dataStorageItem of
+          privacyPolicyJsonContent.info_data_storage_rules; track
+          dataStorageItem) {
+          <li>{{ dataStorageItem }}</li>
+          }
+        </ul>
+      </li>
+    </ul>
+    <h2 id="m10">
+      {{ privacyPolicyJsonContent.personal_rights }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.personal_rights_introduction }}
+    </p>
+    <ul>
+      @for(personalRightsItem of privacyPolicyJsonContent.personal_rights_list;
+      track personalRightsItem) {
+      <li>
+        {{ personalRightsItem }}
+      </li>
+      }
+    </ul>
+
+    <h2 id="m225">{{ privacyPolicyJsonContent.webhosting }}</h2>
+    <p>
+      {{ privacyPolicyJsonContent.webhosting_introduction }}
+    </p>
+    <ul class="m-elements">
+      @for(webhostingItem of privacyPolicyJsonContent.webhosting_list; track
+      webhostingItem) {
+      <li>
+        {{ webhostingItem }}
+      </li>
+      }
+    </ul>
+    <p>
+      {{ privacyPolicyJsonContent.further_advice }}
+    </p>
+    <ul class="m-elements">
+      @for(webhostingProcessingItem of
+      privacyPolicyJsonContent.webhosting_processing_list; track
+      webhostingProcessingItem) {
+      <li>
+        {{ webhostingProcessingItem }}
+      </li>
+
+      }
+    </ul>
+    <h2 id="m134">
+      {{ privacyPolicyJsonContent.cookies }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.cookie_text_1 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.cookie_text_2 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.cookie_text_3 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.cookie_text_4 }}
+    </p>
+    <ul>
+      @for(cookieItem of privacyPolicyJsonContent.cookie_list; track cookieItem)
+      {
+      <li>
+        {{ cookieItem }}
+      </li>
+      }
+    </ul>
+    <p>
+      {{ privacyPolicyJsonContent.general_revocation }}
+    </p>
+    <ul class="m-elements">
+      @for(revocationItem of privacyPolicyJsonContent.revocation_list; track
+      revocationItem) {
+      <li>
+        {{ revocationItem }}
+      </li>
+      }
+    </ul>
+    <p>
+      {{ privacyPolicyJsonContent.further_advice }}
+    </p>
+    <ul class="m-elements">
+      @for(cookieProcessingItem of privacyPolicyJsonContent.cookie_list_2; track
+      cookieProcessingItem) {
+      <li>
+        {{ cookieProcessingItem }}
+      </li>
+      }
+    </ul>
+    <h2 id="m182">
+      {{ privacyPolicyJsonContent.contact_options }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.contact_options_introduction }}
+    </p>
+    <ul class="m-elements">
+      @for(contactOptionsItem of privacyPolicyJsonContent.contact_options_list;
+      track contactOptionsItem) {
+      <li>
+        {{ contactOptionsItem }}
+      </li>
+      }
+    </ul>
+    <p>
+      {{ privacyPolicyJsonContent.further_advice }}
+    </p>
+    <ul class="m-elements">
+      @for(contactOptionsFormItem of
+      privacyPolicyJsonContent.contact_options_list_form; track
+      contactOptionsFormItem) {
+      <li>
+        {{ contactOptionsFormItem }}
+      </li>
+      }
+    </ul>
+    <h2 id="m15">
+      {{ privacyPolicyJsonContent.changes_actualisation }}
+    </h2>
+    <p>
+      {{ privacyPolicyJsonContent.changes_actualisation_text_1 }}
+    </p>
+    <p>
+      {{ privacyPolicyJsonContent.changes_actualisation_text_2 }}
+    </p>
+
+    <h2
+      id="m42"
+      [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.definitions)"
+    ></h2>
+    <p>
+      {{ privacyPolicyJsonContent.definitions_introduction }}
+    </p>
+    <ul class="glossary">
+      @for(definitionItem of privacyPolicyJsonContent.definitions_list; track
+      definitionItem) {
+      <li>
+        {{ definitionItem }}
+      </li>
+      }
+    </ul>
+    <p class="seal">
+      <a
+        href="https://datenschutz-generator.de/"
+        title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        >{{ privacyPolicyJsonContent.creation_reference }}</a
+      >
+    </p>
   </div>
-  <h2 id="m4158">{{ privacyPolicyJsonContent.preamble }}</h2>
-  <p>
-    {{ privacyPolicyJsonContent.preamble_text }}
-  </p>
-  <p>{{ privacyPolicyJsonContent.gender_info }}</p>
-
-  <p>{{ privacyPolicyJsonContent.as_of }}</p>
-  <h2
-    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.table_of_content)"
-  ></h2>
-  <ul class="index">
-    @for(item of privacyPolicyJsonContent.table_of_content_list; track item) {
-    <li>
-      <a class="index-link" href="#{{ item }}">{{ item }}</a>
-    </li>
-    }
-  </ul>
-  <h2 id="m3">{{ privacyPolicyJsonContent.responsible_person }}</h2>
-  <p>
-    {{ staticContent.candidate_name }}<br />{{ staticContent.candidate_street
-    }}<br />{{ staticContent.candidate_town }}
-  </p>
-  <p>
-    <span>{{ privacyPolicyJsonContent.email_address }}: </span>
-    <a href="mailto:{{ staticContent.email }}">{{ staticContent.email }}</a>
-  </p>
-  <p>
-    <span>{{ privacyPolicyJsonContent.imprint }}: </span>
-    <a routerLink="/imprint">
-      {{ staticContent.imprint_link }}
-    </a>
-  </p>
-  <h2 id="mOverview">{{ privacyPolicyJsonContent.overview_of_processing }}</h2>
-  <p>
-    {{ privacyPolicyJsonContent.overview_processing_text }}
-  </p>
-  <h3>{{ privacyPolicyJsonContent.kinds_of_data_title }}</h3>
-  <ul>
-    @for(dataItem of privacyPolicyJsonContent.kinds_of_data; track dataItem) {
-    <li>{{ dataItem }}</li>
-    }
-  </ul>
-  <h3>{{ privacyPolicyJsonContent.categories_of_people_title }}</h3>
-  <ul>
-    @for(categoryItem of privacyPolicyJsonContent.categories_of_people; track
-    categoryItem) {
-    <li>{{ categoryItem }}</li>
-    }
-  </ul>
-  <h3>{{ privacyPolicyJsonContent.intentions_of_processing_title }}</h3>
-  <ul>
-    @for(processingItem of privacyPolicyJsonContent.intentions_of_processing;
-    track processingItem) {
-    <li>{{ processingItem }}</li>
-    }
-  </ul>
-  <h2
-    id="m2427"
-    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.legal_basics)"
-  ></h2>
-  <p>
-    {{ privacyPolicyJsonContent.legal_basics_introduction }}
-  </p>
-  <ul>
-    @for(legalBasicItem of privacyPolicyJsonContent.legal_basics_items; track
-    legalBasicItem) {
-    <li>
-      {{ legalBasicItem }}
-    </li>
-    }
-  </ul>
-  <p>
-    {{ privacyPolicyJsonContent.legal_basics_conclusion }}
-  </p>
-
-  <h2
-    id="m27"
-    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.security_measures)"
-  ></h2>
-  <p>
-    {{ privacyPolicyJsonContent.security_measures_text_1 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.security_measures_text_2 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.security_measures_text_3 }}
-  </p>
-
-  <h2
-    id="m25"
-    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.delivery_of_data)"
-  ></h2>
-  <p>
-    {{ privacyPolicyJsonContent.delivery_of_data_text }}
-  </p>
-
-  <h2 id="m24">
-    {{ privacyPolicyJsonContent.international_data_transfer }}
-  </h2>
-  <p>
-    {{ privacyPolicyJsonContent.international_data_transfer_text_1 }}
-    <a
-      href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en?prefLang=de"
-      target="_blank"
-      >https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en?prefLang=de.</a
-    >
-  </p>
-  <p>
-    <span>
-      {{ privacyPolicyJsonContent.international_data_transfer_text_2 }}
-    </span>
-    <a href="https://www.dataprivacyframework.gov/" target="_blank"
-      >https://www.dataprivacyframework.gov/</a
-    >
-    <span>
-      {{ privacyPolicyJsonContent.international_data_transfer_text_3 }}
-    </span>
-  </p>
-
-  <h2 id="m12">
-    {{ privacyPolicyJsonContent.info_data_storage }}
-  </h2>
-  <p>
-    {{ privacyPolicyJsonContent.info_data_storage_text_1 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.info_data_storage_text_2 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.info_data_storage_text_3 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.info_data_storage_text_4 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.info_data_storage_text_5 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.info_data_storage_text_6 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.further_advice }}
-  </p>
-  <ul class="m-elements">
-    <li>
-      {{ privacyPolicyJsonContent.info_data_storage_text_8 }}
-      <ul>
-        @for(dataStorageItem of
-        privacyPolicyJsonContent.info_data_storage_rules; track dataStorageItem)
-        {
-        <li>{{ dataStorageItem }}</li>
-        }
-      </ul>
-    </li>
-  </ul>
-  <h2 id="m10">
-    {{ privacyPolicyJsonContent.personal_rights }}
-  </h2>
-  <p>
-    {{ privacyPolicyJsonContent.personal_rights_introduction }}
-  </p>
-  <ul>
-    @for(personalRightsItem of privacyPolicyJsonContent.personal_rights_list;
-    track personalRightsItem) {
-    <li>
-      {{ personalRightsItem }}
-    </li>
-    }
-  </ul>
-
-  <h2 id="m225">{{ privacyPolicyJsonContent.webhosting }}</h2>
-  <p>
-    {{ privacyPolicyJsonContent.webhosting_introduction }}
-  </p>
-  <ul class="m-elements">
-    @for(webhostingItem of privacyPolicyJsonContent.webhosting_list; track
-    webhostingItem) {
-    <li>
-      {{ webhostingItem }}
-    </li>
-    }
-  </ul>
-  <p>
-    {{ privacyPolicyJsonContent.further_advice }}
-  </p>
-  <ul class="m-elements">
-    @for(webhostingProcessingItem of
-    privacyPolicyJsonContent.webhosting_processing_list; track
-    webhostingProcessingItem) {
-    <li>
-      {{ webhostingProcessingItem }}
-    </li>
-
-    }
-  </ul>
-  <h2 id="m134">
-    {{ privacyPolicyJsonContent.cookies }}
-  </h2>
-  <p>
-    {{ privacyPolicyJsonContent.cookie_text_1 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.cookie_text_2 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.cookie_text_3 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.cookie_text_4 }}
-  </p>
-  <ul>
-    @for(cookieItem of privacyPolicyJsonContent.cookie_list; track cookieItem) {
-    <li>
-      {{ cookieItem }}
-    </li>
-    }
-  </ul>
-  <p>
-    {{ privacyPolicyJsonContent.general_revocation }}
-  </p>
-  <ul class="m-elements">
-    @for(revocationItem of privacyPolicyJsonContent.revocation_list; track
-    revocationItem) {
-    <li>
-      {{ revocationItem }}
-    </li>
-    }
-  </ul>
-  <p>
-    {{ privacyPolicyJsonContent.further_advice }}
-  </p>
-  <ul class="m-elements">
-    @for(cookieProcessingItem of privacyPolicyJsonContent.cookie_list_2; track
-    cookieProcessingItem) {
-    <li>
-      {{ cookieProcessingItem }}
-    </li>
-    }
-  </ul>
-  <h2 id="m182">
-    {{ privacyPolicyJsonContent.contact_options }}
-  </h2>
-  <p>
-    {{ privacyPolicyJsonContent.contact_options_introduction }}
-  </p>
-  <ul class="m-elements">
-    @for(contactOptionsItem of privacyPolicyJsonContent.contact_options_list;
-    track contactOptionsItem) {
-    <li>
-      {{ contactOptionsItem }}
-    </li>
-    }
-  </ul>
-  <p>
-    {{ privacyPolicyJsonContent.further_advice }}
-  </p>
-  <ul class="m-elements">
-    @for(contactOptionsFormItem of
-    privacyPolicyJsonContent.contact_options_list_form; track
-    contactOptionsFormItem) {
-    <li>
-      {{ contactOptionsFormItem }}
-    </li>
-    }
-  </ul>
-  <h2 id="m15">
-    {{ privacyPolicyJsonContent.changes_actualisation }}
-  </h2>
-  <p>
-    {{ privacyPolicyJsonContent.changes_actualisation_text_1 }}
-  </p>
-  <p>
-    {{ privacyPolicyJsonContent.changes_actualisation_text_2 }}
-  </p>
-
-  <h2
-    id="m42"
-    [innerHTML]="insertSoftHyphens(privacyPolicyJsonContent.definitions)"
-  ></h2>
-  <p>
-    {{ privacyPolicyJsonContent.definitions_introduction }}
-  </p>
-  <ul class="glossary">
-    @for(definitionItem of privacyPolicyJsonContent.definitions_list; track
-    definitionItem) {
-    <li>
-      {{ definitionItem }}
-    </li>
-    }
-  </ul>
-  <p class="seal">
-    <a
-      href="https://datenschutz-generator.de/"
-      title="Rechtstext von Dr. Schwenke - für weitere Informationen bitte anklicken."
-      target="_blank"
-      rel="noopener noreferrer nofollow"
-      >{{ privacyPolicyJsonContent.creation_reference }}</a
-    >
-  </p>
 </section>

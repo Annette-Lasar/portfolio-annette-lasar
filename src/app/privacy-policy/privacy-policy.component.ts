@@ -71,7 +71,7 @@ export class PrivacyPolicyComponent implements OnInit {
           element.getBoundingClientRect().top + window.scrollY;
         this.scrollToPosition(elementPosition, headerOffset);
       }
-    }, 100);
+    }, 150);
   }
 
   scrollToPosition(elementPosition: number, headerOffset: number) {

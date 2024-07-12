@@ -113,10 +113,10 @@ po-button {
       border: transparent 4px solid;
     }
     &:hover::before {
-      animation: border-top-right 0.75s linear forwards;
+      animation: border-top-right 0.25s linear forwards;
     }
     &:hover::after {
-      animation: border-left-bottom 0.75s linear forwards;
+      animation: border-left-bottom 0.25s linear forwards;
     }
     &:hover {
       box-shadow: none;

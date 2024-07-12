@@ -76,6 +76,24 @@ h1 {
   }
 }
 
+.invisible {
+  opacity: 0;
+  span {
+    margin: 0;
+    width: fit-content;
+    height: 50px;
+    padding: 0.3em 3em;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: $font-color;
+    box-shadow: 2px 2px 2px $shadow-color;
+  }
+}
+
 h2 {
   margin: 1em 0;
   &.english {

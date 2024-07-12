@@ -10,13 +10,14 @@ import { ImprintTranslationService } from '../../services/imprint-translation.se
 import { PrivacyPolicyTranslationService } from '../../services/privacy-policy-translation.service';
 import { LanguageOption } from '../../interfaces/language-option.interface';
 import { MenuComponent } from '../menu/menu.component';
+import { RouterLink } from '@angular/router';
 
 
 
 @Component({
   selector: 'po-header',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, MenuComponent],
+  imports: [CommonModule, HttpClientModule, MenuComponent, RouterLink],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })

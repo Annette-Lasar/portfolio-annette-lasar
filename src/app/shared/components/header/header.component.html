@@ -1,10 +1,13 @@
 <section id="top" *ngIf="staticContent && jsonContent">
-  <img
-    *ngIf="staticContent.candidate_logo"
-    class="logo"
-    src="{{ staticContent.candidate_logo }}"
-    alt=""
-  />
+  <a routerLink="/">
+    <img
+      *ngIf="staticContent.candidate_logo"
+      class="logo"
+      src="{{ staticContent.candidate_logo }}"
+      alt=""
+    />
+  </a>
+
   <nav class="menu-box">
     <div class="custom-select-container">
       <div class="custom-select" (click)="toggleDropdown()">
@@ -38,7 +41,3 @@
   [jsonContent]="jsonContent"
   [selectedLanguage]="selectedLanguage"
 ></po-menu>
-
-
-
-
