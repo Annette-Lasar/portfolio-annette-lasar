@@ -20,7 +20,7 @@
           name="name"
           #inputName="ngModel"
         />
-        <label [for]="name">{{ jsonContent.contact.name }}</label>
+        <label [for]="'name'">{{ jsonContent.contact.name }}</label>
       </div>
       <div
         class="validation-message"
@@ -47,7 +47,7 @@
           pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
           #inputEmail="ngModel"
         />
-        <label [for]="email">{{ jsonContent.contact.email }}</label>
+        <label [for]="'email'">{{ jsonContent.contact.email }}</label>
       </div>
       <div
         class="validation-message"
@@ -76,7 +76,7 @@
           minlength="3"
         ></textarea>
 
-        <label for="message">{{ jsonContent.contact.message }}</label>
+        <label [for]="'message'">{{ jsonContent.contact.message }}</label>
       </div>
       <div
         class="validation-message"
@@ -118,4 +118,7 @@
       {{ jsonContent.contact.success }}
     </div>
   </form>
+  <div class="arrow-box">
+    <a class="arrow" (click)="scrollToTop()"></a>
+  </div>
 </section>

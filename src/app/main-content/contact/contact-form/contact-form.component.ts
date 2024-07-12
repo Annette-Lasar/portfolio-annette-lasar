@@ -19,15 +19,12 @@ import { ContactData } from '../../../shared/interfaces/contact-data.interface';
 export class ContactFormComponent implements OnInit {
   staticContent: Static | null = null;
   jsonContent: Translations | null = null;
-  name: string = '';
-  email: string = '';
-  message: string = '';
   checkboxState: boolean = false;
   showSuccessMessage: boolean = false;
   contactData: ContactData = {
-    name: this.name,
-    email: this.email,
-    message: this.message,
+    name: '',
+    email: '',
+    message: '',
   };
   isInvisible: boolean = true;
 
@@ -97,5 +94,12 @@ export class ContactFormComponent implements OnInit {
     setTimeout(() => {
       this.showSuccessMessage = false;
     }, 3000);
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 }
