@@ -12,11 +12,11 @@
       </li>
     </ul>
   </div>
-  <div class="diagonal-arrow-box" (mouseover)="toggleHover(true)">
+  <div class="portfolio-arrow-box" #portfolioArrowBox>
     <img
       src="{{ staticContent.arrow_dark }}"
       alt=""
-      [class.hovered]="isHovered"
+      [class.scrolled]="isScrolled"
     />
   </div>
 </section>

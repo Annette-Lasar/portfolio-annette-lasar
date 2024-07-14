@@ -76,11 +76,6 @@ form {
   }
 }
 
-/* input:hover,
-textarea:hover {
-  border: $background-color-light 2px solid;
-} */
-
 .field-holder:hover input,
 .field-holder:hover textarea {
   border: $background-color-light 2px solid;
@@ -174,117 +169,22 @@ a {
 }
 
 .arrow {
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 80px;
   position: absolute;
-  right: 24px;
-  bottom: 0;
+  right: 0px;
+  bottom: 0px;
   background-image: url("../../../../assets/icons/arrows_light/arrow_light_up.svg");
   background-repeat: no-repeat;
-  background-position: center 80px;
-  border-radius: 50%;
-  animation: moveArrowUp 1.5s infinite;
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(255, 252, 243, 0.907);
+  background-position: center 40px;
+  transition: all 0.125s linear;
   cursor: pointer;
 }
 
-@keyframes moveArrowUp {
-  0% {
-    background-position: center 80px;
-  }
-
-  4% {
-    background-position: center 70px;
-  }
-
-  8% {
-    background-position: center 60px;
-  }
-
-  12% {
-    background-position: center 50px;
-  }
-
-  16% {
-    background-position: center 40px;
-  }
-
-  20% {
-    background-position: center 30px;
-  }
-
-  24% {
-    background-position: center 20px;
-  }
-
-  28% {
-    background-position: center 10px;
-  }
-
-  32% {
-    background-position: center 0px;
-  }
-
-  36% {
-    background-position: center -10px;
-  }
-
-  40% {
-    background-position: center -20px;
-  }
-
-  44% {
-    background-position: center -30px;
-  }
-
-  48% {
-    background-position: center -40px;
-  }
-
-  52% {
-    background-position: center -50px;
-  }
-
-  56% {
-    background-position: center -60px;
-  }
-
-  60% {
-    background-position: center -70px;
-  }
-
-  64% {
-    background-position: center -80px;
-  }
-
-  68% {
-    background-position: center -90px;
-  }
-
-  72% {
-    background-position: center -100px;
-  }
-
-  75% {
-    background-position: center -100px;
-  }
-
-  80% {
-    background-position: center -110px;
-  }
-
-  85% {
-    background-position: center -110px;
-  }
-
-  95% {
-    background-position: center -120px;
-  }
-
-  100% {
-    background-position: center -120px;
-  }
+.arrow:hover {
+  background-position: center;
 }
+
 
 @keyframes showSuccessMessage {
   from {

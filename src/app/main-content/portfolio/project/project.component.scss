@@ -8,15 +8,37 @@ article {
   margin: 0 0 64px;
   .img-box {
     width: 90%;
+    height: fit-content;
     aspect-ratio: 16 / 9;
+    position: relative;
     margin: 1em auto;
     max-width: 400px;
-    position: relative;
     .project-img {
       aspect-ratio: 16 / 9;
+      filter: grayscale(100%);
+    }
+    .frame {
+      top: 8px;
+      left: 8px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: absolute;
+      border: $background-color-dark 1.5px solid;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
     .round-arrow {
-      display: none;
+      top: 50%;
+      height: 40px;
+      position: absolute;
+      transition: opacity 0.3s ease;
+      opacity: 0;
+    }
+    &.visible .project-img {
+      filter: grayscale(0);
+    }
+    &.visible .frame {
+      opacity: 1;
     }
   }
 }
@@ -26,13 +48,13 @@ article {
     text-align: right;
   }
   .img-box {
-    .frame {
-      top: 8px;
-      left: 8px;
-    }
     .round-arrow {
-      top: 50%;
-      right: -28px;
+      left: -8px;
+      transform: translateY(-50%);
+    }
+    &.visible .round-arrow {
+      opacity: 1;
+      animation: spinRoundArrowClockwise 0.5s ease-in-out forwards;
     }
   }
 }
@@ -42,13 +64,13 @@ article {
     text-align: left;
   }
   .img-box {
-    .frame {
-      top: 8px;
-      left: 8px;
-    }
     .round-arrow {
-      top: 50%;
-      left: -8px;
+      right: -20px;
+      transform: translateY(-50%);
+    }
+    &.visible .round-arrow {
+      opacity: 1;
+      animation: spinRoundArrowCounterClockwise 0.5s ease-in-out forwards;
     }
   }
 }
@@ -80,46 +102,33 @@ h3 {
   }
 }
 
+@keyframes spinRoundArrowClockwise {
+  0% {
+    transform: scale(1) translateY(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.2) translateY(-50%) rotate(250deg);
+  }
+}
+
+@keyframes spinRoundArrowCounterClockwise {
+  0% {
+    transform: scale(1) translateY(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.2) translateY(-50%) rotate(-250deg);
+  }
+}
+
 @media (min-width: 50em) {
   .project-wrapper {
     margin: 0 0 36px;
   }
 
   .img-box {
-    position: relative;
     align-self: center;
-    .project-img {
-      filter: grayscale(100%);
-    }
-    .frame {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      border: $background-color-dark 1.5px solid;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .round-arrow {
-      height: 40px;
-      position: absolute;
-      transform: translateY(-50%);
-      transition: opacity 0.3s ease;
-      display: block !important;
-      opacity: 0;
-    }
-
-    &:hover img {
-      filter: grayscale(0);
-    }
-    &:hover .frame {
-      opacity: 1;
-    }
-    &:hover .round-arrow {
-      opacity: 1;
-      animation: spinRoundArrow 0.5s ease-in-out forwards;
-    }
   }
 
   .project-wrapper.odd {
@@ -164,15 +173,5 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-  }
-
-  @keyframes spinRoundArrow {
-    0% {
-      transform: scale(1) translateY(-50%) rotate(0deg);
-    }
-
-    100% {
-      transform: scale(1.2) translateY(-50%) rotate(250deg);
-    }
   }
 }

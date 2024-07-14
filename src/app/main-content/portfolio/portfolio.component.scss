@@ -21,7 +21,7 @@ button {
   font-family: $text-font-family;
 }
 
-.diagonal-arrow-box {
+.portfolio-arrow-box {
   max-width: 200px;
   height: 200px;
   margin: 0 auto;
@@ -32,8 +32,8 @@ button {
     top: 0;
     right: 20px;
     transform: rotate(45deg);
-    transition: transform 0.75s linear;
-    &.hovered {
+    transition: transform 0.25s linear;
+    &.scrolled {
       transform: translateX(-100px) translateY(100px) rotate(45deg);
     }
   }

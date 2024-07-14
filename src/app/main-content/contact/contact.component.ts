@@ -39,10 +39,10 @@ export class ContactComponent implements OnInit {
       .subscribe();
   }
 
-  /* scrollToTop(): void {
+  scrollToTop(): void {
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
-  } */
+  }
 }

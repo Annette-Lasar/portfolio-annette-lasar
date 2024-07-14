@@ -8,7 +8,7 @@
   >
     <h3>{{ i + 1 }} / {{ count }}</h3>
     @for(key of getProjectKeys(project); track key;) {
-    <div class="img-box">
+    <div class="img-box" #imgBox>
       <img
         [src]="'assets/img/projects/' + staticContentProjects[key].path"
         alt="{{ staticContent.portfolio.projects[key].title }}"

@@ -13,17 +13,17 @@
     <div class="skill-box">
       @for(icon of staticContent.candidate_skills; track icon) {
       <div class="icon-box">
-        <img src="{{ icon.icon_path }}" alt="" />
+        <img class="icon" src="{{ icon.icon_path }}" alt="" />
         <p class="caption">{{ icon.caption }}</p>
       </div>
       }
     </div>
   </div>
-  <div class="diagonal-arrow-box" (mouseover)="toggleHover(true)">
+  <div class="skills-arrow-box" #skillsArrowBox>
     <img
       src="{{ staticContent.arrow_dark }}"
       alt=""
-      [class.hovered]="isHovered"
+      [class.scrolled]="isScrolled"
     />
   </div>
 </section>

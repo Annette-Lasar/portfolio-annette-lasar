@@ -3,10 +3,15 @@ import {
   HostListener,
   OnInit,
   AfterViewInit,
+  ElementRef,
+  ViewChildren,
+  ChangeDetectorRef,
+  QueryList,
   Inject,
   PLATFORM_ID,
+  Renderer2,
 } from '@angular/core';
-import { CommonModule, DOCUMENT, isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { StaticContentService } from '../../../shared/services/static-content.service';
 import { Static } from '../../../shared/interfaces/static-content.interface';
@@ -19,6 +24,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { catchError } from 'rxjs';
 import { of } from 'rxjs';
+import { ScrollService } from '../../../shared/services/scroll.service';
 
 @Component({
   selector: 'po-project',
@@ -32,10 +38,14 @@ export class ProjectComponent implements OnInit, AfterViewInit {
   staticContentProjects: { [key: string]: StaticProject } | null = null;
   jsonContent: Translations | null = null;
   isWindowLarge: boolean = false;
+  @ViewChildren('imgBox') imgBoxes!: QueryList<ElementRef>;
 
   constructor(
     private staticContentService: StaticContentService,
     private translationService: TranslationService,
+    private scrollService: ScrollService,
+    private cdr: ChangeDetectorRef,
+    private renderer: Renderer2,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {}
 
@@ -77,7 +87,34 @@ export class ProjectComponent implements OnInit, AfterViewInit {
         delay: 200,
       });
     }
+
+    setTimeout(() => {
+      this.registerImgBoxes(200);
+    }, 100);
   }
+
+  private registerImgBoxes(offset: number): void {
+    this.cdr.detectChanges();
+    this.imgBoxes.forEach((imgBox, index) => {
+      const adjustedOffset = offset + index * 100;
+      this.scrollService.registerElement(imgBox.nativeElement, adjustedOffset);
+      this.renderer.listen('window', 'scroll', () => {
+        const scrollTop =
+          window.scrollY ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0;
+        const boxOffsetTop =
+          imgBox.nativeElement.getBoundingClientRect().top + window.scrollY;
+        if (scrollTop + window.innerHeight - 200 > boxOffsetTop + offset) {
+          this.renderer.addClass(imgBox.nativeElement, 'visible');
+        } else {
+          this.renderer.removeClass(imgBox.nativeElement, 'visible');
+        }
+      });
+    });
+  }
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {

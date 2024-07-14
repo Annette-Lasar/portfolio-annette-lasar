@@ -1,4 +1,4 @@
-<section *ngIf="staticContent && jsonContent">
+<!-- <section *ngIf="staticContent && jsonContent">
   <h2>{{ jsonContent.about.about }}</h2>
   <div class="wrapper">
     <div class="text-box">
@@ -25,6 +25,37 @@
       src="{{ staticContent.arrow_dark }}"
       alt=""
       [class.hovered]="isHovered"
+    />
+  </div>
+</section> -->
+
+<section *ngIf="staticContent && jsonContent">
+  <h2>{{ jsonContent.about.about }}</h2>
+  <div class="wrapper">
+    <div class="text-box">
+      <p>
+        {{ jsonContent.about.description }}
+      </p>
+      <p>{{ jsonContent.about.request_to_contact }}</p>
+      <po-button
+        [caption]="jsonContent.about.button"
+        [linkTarget]="'#contact'"
+      ></po-button>
+    </div>
+    <div class="img-box">
+      <img
+        *ngIf="staticContent?.candidate_photo"
+        src="{{ staticContent.candidate_photo }}"
+        alt=""
+      />
+      <div class="frame"></div>
+    </div>
+  </div>
+  <div class="about-arrow-box" #aboutArrowBox>
+    <img
+      src="{{ staticContent.arrow_dark }}"
+      alt=""
+      [class.scrolled]="isScrolled"
     />
   </div>
 </section>

@@ -35,10 +35,10 @@ po-button {
   display: none;
 }
 
-.diagonal-arrow-box {
+.about-arrow-box {
   max-width: 200px;
   height: 200px;
-  margin: 0 auto;
+  margin: 32px auto 0;
   padding: 2em;
   position: relative;
   img {
@@ -46,8 +46,9 @@ po-button {
     top: 0;
     right: 20px;
     transform: rotate(45deg);
-    transition: transform .75s linear;
-    &.hovered {
+    transition: transform 0.25s linear;
+
+    &.scrolled {
       transform: translateX(-100px) translateY(100px) rotate(45deg);
     }
   }
