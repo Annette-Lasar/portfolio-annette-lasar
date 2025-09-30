@@ -5,7 +5,7 @@
     "portfolio": "Portfolio"
   },
   "hero": {
-    "profession": "Frontend Developer",
+    "profession": "Fullstack Developer",
     "button": "Nachricht senden"
   },
   "about": {
@@ -21,22 +21,34 @@
     "introduction": "Erkunden Sie hier eine Auswahl meiner Arbeit. - Probieren Sie die Projekte aus, um meine Fähigkeiten in Aktion zu sehen. Beim Programmieren folge ich stets dem Grundsatz 'Small Screen First'.",
     "projects": [
       {
-        "join": {
-          "description": "Vom Kanban System inspirierte Anwendung zur Verwaltung von Aufgaben. Erstellen Sie Aufgaben und organisieren Sie sie, indem Sie die Drag and Drop-Funktion verwenden, und weisen Sie ihnen Nutzer und Kategorien zu.",
-          "test_button": "Ausprobieren"
-        }
+        "id": "pokedex",
+        "description": "Diese App basiert auf der PokéAPI, einer einfachen Bibliothek, und liefert und katalogisiert Informationen über Pokémons.",
+        "test_button": "Ausprobieren"
       },
       {
-        "mermaid": {
-          "description": "Ein Schwimm-und-Schieß-Spiel, das auf einem objektorientierten Ansatz basiert. Helfen Sie dem Meermädchen, Perlen und Sterne zu finden, um gegen verschiedene Meerestiere zu kämpfen, und sammeln Sie den goldenen Schlüssel ein, um am Ende die Schatztruhe zu öffnen.",
-          "test_button": "Ausprobieren"
-        }
+        "id": "mermaid",
+        "description": "Ein Schwimm-und-Schieß-Spiel, das auf einem objektorientierten Ansatz basiert. Helfen Sie dem Meermädchen, Perlen und Sterne zu finden, um gegen verschiedene Meerestiere zu kämpfen, und sammeln Sie den goldenen Schlüssel ein, um am Ende die Schatztruhe zu öffnen.",
+        "test_button": "Ausprobieren"
       },
       {
-        "pokedex": {
-          "description": "Diese App basiert auf der PokéAPI, einer einfachen Bibliothek, und liefert und katalogisiert Informationen über Pokémons.",
-          "test_button": "Ausprobieren"
-        }
+        "id": "dabubble",
+        "description": "Ein Chat-Messenger, inspiriert von Slack. Nutzer können Kanäle erstellen, Nachrichten versenden, Emojis verwenden und Dateien teilen. Das Projekt legt besonderen Wert auf eine klare Benutzeroberfläche und die Arbeit mit Firestore als Datenbank.",
+        "test_button": "Ausprobieren"
+      },
+      {
+        "id": "join",
+        "description": "Vom Kanban System inspirierte Anwendung zur Verwaltung von Aufgaben. Erstellen Sie Aufgaben und organisieren Sie sie, indem Sie die Drag and Drop-Funktion verwenden, und weisen Sie ihnen Nutzer und Kategorien zu.",
+        "test_button": "Ausprobieren"
+      },
+      {
+        "id": "coderr",
+        "description": "Eine Plattform, auf der Anbieter ihre Dienstleistungen vorstellen und Kunden Angebote vergleichen können. Nutzer können Profile anlegen, Bestellungen aufgeben und Anbieter mit Bewertungen einschätzen. Das Projekt ist als reines Backend mit Django/DRF umgesetzt.",
+        "test_button": "Ausprobieren"
+      },
+      {
+        "id": "videoflix",
+        "description": "Eine Streaming-Plattform nach dem Vorbild von Netflix. Nutzer können sich registrieren, Videos in verschiedenen Qualitätsstufen streamen und ihren Fortschritt speichern. Die Backend-Logik mit Django und PostgreSQL sorgt für Benutzerverwaltung und Streaming-Funktionen.",
+        "test_button": "Ausprobieren"
       }
     ]
   },
@@ -50,7 +62,7 @@
     "confirmation_prefix": "Ich habe die ",
     "privacy_policy": "Datenschutzbestimmungen ",
     "confirmation_suffix": "gelesen und stimme der Verarbeitung meiner Daten gemäß den Angaben zu.",
-    "button": "Nachricht senden", 
+    "button": "Nachricht senden",
     "enter_name": "Bitte geben Sie Ihren Namen ein!",
     "enter_email": "Bitte geben Sie Ihre E-Mail-Adresse ein!",
     "enter_message": "Bitte geben Sie eine Nachricht ein!",

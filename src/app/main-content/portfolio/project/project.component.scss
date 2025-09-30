@@ -13,6 +13,17 @@ article {
     position: relative;
     margin: 1em auto;
     max-width: 400px;
+    .coming-soon {
+      width: 250px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-8deg);
+      color: #ef0d0d;
+      font-size: 2rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
     .project-img {
       aspect-ratio: 16 / 9;
       filter: grayscale(100%);

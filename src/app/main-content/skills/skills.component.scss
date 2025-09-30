@@ -8,7 +8,7 @@ section {
 .skill-wrapper {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 4em 0;
+  padding: 4em 0 0;
   position: relative;
   border: $background-color-dark 3px solid;
   h2 {
@@ -45,19 +45,19 @@ section {
   justify-items: center;
   align-items: center;
   .icon-box {
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     .icon {
       height: 52px;
-      // transition: transform 1s linear;
       transition: transform 0.5s;
     }
   }
   .caption {
     margin: 16px 0 0;
-    font-size: clamp(1rem, 1.8vw, 2rem);
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
     font-weight: 700;
     text-align: center;
   }

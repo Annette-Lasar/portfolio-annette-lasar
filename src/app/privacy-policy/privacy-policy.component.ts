@@ -6,7 +6,6 @@ import { StaticContentService } from '../shared/services/static-content.service'
 import { Static } from '../shared/interfaces/static-content.interface';
 import { PrivacyPolicyTranslationService } from '../shared/services/privacy-policy-translation.service';
 import { PrivacyPolicyToTranslate } from '../shared/interfaces/privacy-policy-to-translate.interface';
-import { ButtonComponent } from '../shared/components/button/button.component';
 
 @Component({
   selector: 'po-privacy-policy',
@@ -16,7 +15,6 @@ import { ButtonComponent } from '../shared/components/button/button.component';
     HttpClientModule,
     RouterModule,
     RouterLink,
-    ButtonComponent,
   ],
   templateUrl: './privacy-policy.component.html',
   styleUrl: './privacy-policy.component.scss',
@@ -83,8 +81,6 @@ export class PrivacyPolicyComponent implements OnInit {
   }
 
     insertSoftHyphens(text: string): string {
-      console.log('Text: ', text);
-      console.log('Einzelne Wörter: ', text.split(' ').map((oneWord) => this.hyphenationRules[oneWord] || oneWord).join(' '));
       return text.split(' ').map(word => this.hyphenationRules[word] || word).join(' ');
     }
 }

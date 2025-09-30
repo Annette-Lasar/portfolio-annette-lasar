@@ -1,4 +1,4 @@
-<article *ngIf="staticContent && jsonContent && staticContentProjects">
+<!-- <article *ngIf="staticContent && jsonContent && staticContentProjects">
   @for(project of jsonContent.portfolio.projects; track project; let i= $index;
   let count = $count) {
 
@@ -55,6 +55,67 @@
       </div>
     </div>
     }
+  </div>
+  } @empty { 'No projects available.' }
+</article> -->
+
+<article *ngIf="staticContent && jsonContent && staticContentProjects">
+  @for(project of mergedProjects; track project.id; let i= $index; let count =
+  $count) {
+
+  <div
+    [ngClass]="{ odd: (i + 1) % 2 !== 0, even: (i + 1) % 2 === 0 }"
+    class="project-wrapper"
+  >
+    <h3>{{ i + 1 }} / {{ count }}</h3>
+    <div class="img-box" #imgBox>
+      <img
+        [src]="'assets/img/projects/' + project.path"
+        alt="{{ project.title }}"
+        class="project-img"
+      />
+      <div class="frame"></div>
+      <img
+        class="round-arrow"
+        [src]="
+          'assets/icons/arrows_dark/' + staticContent.portfolio.round_arrow
+        "
+      />
+      @if(project.comingSoon) {
+      <div class="coming-soon">Coming soon!</div>
+      }
+    </div>
+    <div
+      class="text-wrapper"
+      [ngClass]="{ odd: (i + 1) % 2 !== 0, even: (i + 1) % 2 === 0 }"
+      [attr.data-aos]="getDataAos((i + 1) % 2 !== 0)"
+      data-aos-easing="ease-out"
+    >
+      <h5>{{ project.title }}</h5>
+      <div class="skills">
+        @for(skill of project.skills; track skill; let last = $last){
+        {{ skill }}
+        <ng-container *ngIf="!last"> | </ng-container>
+        }
+      </div>
+      <div class="description">
+        {{ project.description }}
+      </div>
+      <div class="project-button-wrapper">
+        <po-button
+          [targetAttr]="'_blank'"
+          [linkTarget]="project.project_url"
+          [caption]="project.test_button"
+          [additionalClass]="'project-button'"
+        ></po-button>
+        <po-button
+          [targetAttr]="'_blank'"
+          [linkTarget]="project.github_url"
+          [caption]="project.code_button"
+          [additionalClass]="'project-button'"
+        ></po-button>
+      </div>
+    </div>
   </div>
   } @empty { 'No projects available.' }
 </article>

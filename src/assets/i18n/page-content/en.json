@@ -5,7 +5,7 @@
     "portfolio": "Portfolio"
   },
   "hero": {
-    "profession": "Frontend Developer",
+    "profession": "Fullstack Developer",
     "button": "Send a message"
   },
   "about": {
@@ -21,22 +21,34 @@
     "introduction": "Explore a selection of my work here. - Interact with projects to see my skills in action. While coding, I always follow the 'Small Screen First' principle.",
     "projects": [
       {
-        "join": {
-          "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-          "test_button": "Try it out"
-        }
+        "id": "pokedex",
+        "description": "This app is based on the PokéAPI, a simple library, and provides and catalogs information about Pokémon.",
+        "test_button": "Try it out"
       },
       {
-        "mermaid": {
-          "description": "A swim-and-shoot game based on an object-oriented approach. Help the mermaid to find pearls and stars to fight against a variety of fish and collect the golden key to open the treasure chest in the end.",
-          "test_button": "Try it out"
-        }
+        "id": "mermaid",
+        "description": "A swimming and shooting game based on an object-oriented approach. Help the mermaid collect pearls and stars to fight against various sea creatures, and find the golden key to open the treasure chest at the end.",
+        "test_button": "Try it out"
       },
       {
-        "pokedex": {
-          "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information.",
-          "test_button": "Try it out"
-        }
+        "id": "dabubble",
+        "description": "A chat messenger inspired by Slack. Users can create channels, send messages, use emojis, and share files. The project places particular emphasis on a clear user interface and the use of Firestore as a database.",
+        "test_button": "Try it out"
+      },
+      {
+        "id": "join",
+        "description": "An application inspired by the Kanban system for task management. Create tasks and organize them using drag-and-drop, and assign them to users and categories.",
+        "test_button": "Try it out"
+      },
+      {
+        "id": "coderr",
+        "description": "A platform where providers can present their services and customers can compare offers. Users can create profiles, place orders, and rate providers. The project is implemented as a pure backend using Django/DRF.",
+        "test_button": "Try it out"
+      },
+      {
+        "id": "videoflix",
+        "description": "A streaming platform modeled after Netflix. Users can register, stream videos in different quality levels, and save their progress. The backend logic with Django and PostgreSQL manages user accounts and streaming functions.",
+        "test_button": "Try it out"
       }
     ]
   },
@@ -61,5 +73,3 @@
     "legal": "Legal notice"
   }
 }
-
-

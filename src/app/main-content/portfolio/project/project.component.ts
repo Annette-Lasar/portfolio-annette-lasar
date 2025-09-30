@@ -18,13 +18,13 @@ import { Static } from '../../../shared/interfaces/static-content.interface';
 import { StaticProject } from '../../../shared/interfaces/static-project.interface';
 import { TranslationService } from '../../../shared/services/translation.service';
 import { Translations } from '../../../shared/interfaces/translations.interface';
-import { ProjectWrapper } from '../../../shared/interfaces/project-wrapper.interface';
-import { ButtonComponent } from '../../../shared/components/button/button.component';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { catchError } from 'rxjs';
 import { of } from 'rxjs';
 import { ScrollService } from '../../../shared/services/scroll.service';
+import { MergedProject } from '../../../shared/interfaces/merged-projects.interface.js';
+import { ButtonComponent } from '../../../shared/components/button/button.component.js';
 
 @Component({
   selector: 'po-project',
@@ -35,7 +35,10 @@ import { ScrollService } from '../../../shared/services/scroll.service';
 })
 export class ProjectComponent implements OnInit, AfterViewInit {
   staticContent: Static | null = null;
-  staticContentProjects: { [key: string]: StaticProject } | null = null;
+  staticContentProjects: StaticProject[] = [];
+
+  mergedProjects: MergedProject[] = [];
+
   jsonContent: Translations | null = null;
   isWindowLarge: boolean = false;
   @ViewChildren('imgBox') imgBoxes!: QueryList<ElementRef>;
@@ -50,8 +53,6 @@ export class ProjectComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit(): void {
-    this.updateWindowSize();
-
     this.staticContentService
       .getStaticContent()
       .pipe(
@@ -64,12 +65,14 @@ export class ProjectComponent implements OnInit, AfterViewInit {
         if (data) {
           this.staticContent = data;
           this.staticContentProjects = data.portfolio.projects;
+          this.tryMergeProjects();
         }
       });
 
     this.translationService.translations$.subscribe(
       (data: Translations | null) => {
         this.jsonContent = data;
+        this.tryMergeProjects();
         AOS.refresh();
       }
     );
@@ -115,7 +118,6 @@ export class ProjectComponent implements OnInit, AfterViewInit {
     });
   }
 
-
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
     this.updateWindowSize();
@@ -134,7 +136,19 @@ export class ProjectComponent implements OnInit, AfterViewInit {
     }
   }
 
-  getProjectKeys(project: ProjectWrapper): string[] {
-    return Object.keys(project);
+  private tryMergeProjects(): void {
+    if (this.staticContentProjects && this.jsonContent?.portfolio.projects) {
+      this.mergedProjects = this.staticContentProjects.map((staticProj) => {
+        const transProj = this.jsonContent!.portfolio.projects.find(
+          (p: any) => p.id === staticProj.id
+        );
+
+        return {
+          ...staticProj,
+          description: transProj?.description || '',
+          test_button: transProj?.test_button || '',
+        };
+      });
+    }
   }
 }

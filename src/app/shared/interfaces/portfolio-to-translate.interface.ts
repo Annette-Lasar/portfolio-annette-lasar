@@ -1,6 +1,6 @@
-import { ProjectWrapper } from './project-wrapper.interface';
+import { ProjectToTranslate } from './project-to-translate.interface.js';
 
 export interface PortfolioToTranslate {
   introduction: string;
-  projects: ProjectWrapper[];
+  projects: ProjectToTranslate[];
 }

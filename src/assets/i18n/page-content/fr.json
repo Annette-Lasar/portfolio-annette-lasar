@@ -5,7 +5,7 @@
     "portfolio": "Portfolio"
   },
   "hero": {
-    "profession": "Développeuse Frontend",
+    "profession": "Développeuse Fullstack",
     "button": "Envoyer un message"
   },
   "about": {
@@ -21,22 +21,34 @@
     "introduction": "Découvrez une sélection de mon travail ici. Interagissez avec les projets pour voir mes compétences en action. Lors de la programmation, je suis toujours le principe du 'Small Screen First'.",
     "projects": [
       {
-        "join": {
-          "description": "Gestionnaire de tâches inspiré du système Kanban. Créez et organisez des tâches à l'aide de fonctions de glisser-déposer, assignez des utilisateurs et des catégories.",
-          "test_button": "Essayez"
-        }
+        "id": "pokedex",
+        "description": "Cette application est basée sur la PokéAPI, une bibliothèque simple, et fournit et catalogue des informations sur les Pokémon.",
+        "test_button": "Essayer"
       },
       {
-        "mermaid": {
-          "description": "Un jeu de nage et de tir basé sur une approche orientée objet. Aidez la sirène à trouver des perles et des étoiles pour combattre une variété d'animax marins et à collecter la clé dorée pour à la fin ouvrir le coffre au trésor.",
-          "test_button": "Essayez"
-        }
+        "id": "mermaid",
+        "description": "Un jeu de natation et de tir basé sur une approche orientée objet. Aidez la petite sirène à collecter des perles et des étoiles pour combattre diverses créatures marines, et trouvez la clé d’or pour ouvrir le coffre au trésor à la fin.",
+        "test_button": "Essayer"
       },
       {
-        "pokedex": {
-          "description": "Basée sur l'API Poké, une bibliothèque simple qui fournit et catalogue des informations sur les Pokémons.",
-          "test_button": "Essayez"
-        }
+        "id": "dabubble",
+        "description": "Un messager de discussion inspiré de Slack. Les utilisateurs peuvent créer des canaux, envoyer des messages, utiliser des emojis et partager des fichiers. Le projet met particulièrement l’accent sur une interface claire et l’utilisation de Firestore comme base de données.",
+        "test_button": "Essayer"
+      },
+      {
+        "id": "join",
+        "description": "Une application inspirée du système Kanban pour la gestion des tâches. Créez des tâches et organisez-les en utilisant le glisser-déposer, et assignez-les à des utilisateurs et des catégories.",
+        "test_button": "Essayer"
+      },
+      {
+        "id": "coderr",
+        "description": "Une plateforme où les prestataires peuvent présenter leurs services et les clients comparer les offres. Les utilisateurs peuvent créer des profils, passer des commandes et évaluer les prestataires. Le projet est implémenté comme un pur backend avec Django/DRF.",
+        "test_button": "Essayer"
+      },
+      {
+        "id": "videoflix",
+        "description": "Une plateforme de streaming inspirée de Netflix. Les utilisateurs peuvent s’inscrire, regarder des vidéos de différentes qualités et sauvegarder leur progression. La logique backend avec Django et PostgreSQL gère les comptes utilisateurs et les fonctions de streaming.",
+        "test_button": "Essayer"
       }
     ]
   },

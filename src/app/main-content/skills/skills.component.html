@@ -12,10 +12,10 @@
     </h2>
     <div class="skill-box">
       @for(icon of staticContent.candidate_skills; track icon) {
-      <div class="icon-box">
+      <figure class="icon-box">
         <img class="icon" src="{{ icon.icon_path }}" alt="" />
-        <p class="caption">{{ icon.caption }}</p>
-      </div>
+        <figcaption class="caption">{{ icon.caption }}</figcaption>
+      </figure>
       }
     </div>
   </div>

@@ -1,4 +1,5 @@
 export interface ProjectToTranslate {
-    description: string;
-    test_button: string;
-  }
+  id: string;
+  description: string;
+  test_button: string;
+}
